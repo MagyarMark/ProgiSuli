@@ -18,5 +18,78 @@
     <div class="header">
         <h1>Python</h1>
     </div>
+
+    <div class="row">
+        <div class="column1">
+            <h1>Python Alapok</h1>
+            <hr>
+            <p>A Python egy magas szintű, általános célú programozási nyelv, amelyet könnyű olvasni és írni. A Python egyszerű szintaxisa lehetővé teszi a gyors fejlesztést és a kód könnyű karbantartását.</p>
+        </div>
+        <div class="column1">
+            <h1>Python Kezdő Szint</h1>
+            <hr>
+            <p>A kezdő szintű Python programozás alapvető szintaxis és egyszerű programok írását foglalja magában. Például egy egyszerű "Hello, World!" program:</p>
+            <pre class="code">
+                <code>
+print("Hello, World!")
+                </code>
+            </pre>
+            <p>A fenti kód egy egyszerű Python programot mutat be, amely kiírja a "Hello, World!" üzenetet a konzolra.</p>
+        </div>
+    </div>
+    
+    <div class="row">
+        <div class="column1">
+            <h1>Python Haladó Szint</h1>
+            <hr>
+            <p>A haladó szintű Python programozás magában foglalja az objektumorientált programozást, modulok és csomagok használatát, valamint a kivételkezelést. Például egy egyszerű osztály definiálása:</p>
+            <pre class="code">
+                <code>
+class Szemely:
+    def __init__(self, nev, kor):
+        self.nev = nev
+        self.kor = kor
+    
+def bemutatkozas(self):
+    print(f"Szia, a nevem {self.nev} és {self.kor} éves vagyok.")
+    
+szemely = Szemely("Anna", 25)
+szemely.bemutatkozas()
+                </code>
+            </pre>
+            <p>A fenti kód egy egyszerű osztályt definiál, amely egy személy nevét és korát tárolja, és egy bemutatkozó üzenetet ír ki.</p>
+        </div>
+        <div class="column1">
+            <h1>Python Profi Szint</h1>
+            <hr>
+            <p>A profi szintű Python programozás magában foglalja a fejlett technikákat, mint például a dekorátorok, generátorok, aszinkron programozás és a különböző Python könyvtárak és keretrendszerek használata. Például egy egyszerű dekorátor:</p>
+            <pre class="code">
+                <code class="python">
+def my_decorator(func):
+    def wrapper():
+        print("Valami történik a függvény előtt.")
+        func()
+        print("Valami történik a függvény után.")
+    return wrapper
+    
+@my_decorator
+def mondj_valamit():
+    print("Hello!")
+    
+mondj_valamit()
+                </code>
+            </pre>
+            <p>A fenti kód egy egyszerű dekorátort mutat be, amely egy függvény előtt és után hajt végre műveleteket.</p>
+        </div>
+    </div>
+
+<hr>
+
+    <div class="footer">
+        <div class="code">
+            <h1><a href="index.html">Vissza a főoldalra</a></h1>
+        </div>
+    </div>
+
 </body>
 </html>

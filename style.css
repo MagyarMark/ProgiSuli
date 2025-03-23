@@ -108,29 +108,59 @@ li a:hover {
     max-width: 750px;
     margin: 25px auto;
     padding: 5px;
-    font-family: 'Roboto', sans-serif;
-    font-size: clamp(24px, 4vw, 48px);
     font-weight: bold;
     color: white;
-    text-transform: uppercase;
     border-radius: 15px;
     box-shadow: 0 0 20px #00F5D4,
                 0 0 40px #FF007F,
                 0 0 60px #2A0E61;
-    text-shadow: 2px 2px 4px #00F5D4,
-                -2px -2px 4px #FF007F;
     transition: all 0.3s ease-in-out;
 }
 
 .column1 h1{
     text-align: center;
     font-size: clamp(24px, 4vw, 48px);
+    text-transform: uppercase;
+    text-shadow: 2px 2px 4px #00F5D4,
+                -2px -2px 4px #FF007F;
 }
 
 .column1 p{
     font-size: 20px;
     color: white;
+}
+
+.column1 pre {
+    font-size: 20px;
+    color: white;
+    float: center;
     text-shadow: 0 0 5px #00F5D4, 0 0 10px #00F5D4;
+}
+
+.code{
+    border-radius: 15px;
+    box-shadow: 0 0 20px #00F5D4,
+                0 0 40px #FF007F,
+                0 0 60px #2A0E61;
+    transition: all 0.3s ease-in-out;
+}
+
+@media screen and (max-width: 768px) {
+    .column1 pre {
+        font-size: 18px;
+    }
+    .python {
+        font-size: 14px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .column1 pre {
+        font-size: 16px;
+    }
+    .python {
+        font-size: 11px;
+    }
 }
 
 @media screen and (max-width: 768px) {
@@ -189,7 +219,7 @@ li a:hover {
 }
 
 .footer {
-    background-color: #f1f1f1;
+    color: #f1f1f1;
     padding: 20px;
     position: relative;
     left: 0;
