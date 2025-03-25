@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/x-icon" href="png/PS.png">
     <title>ProgiSuli - WEB</title>
 </head>
 <body>
@@ -19,7 +20,7 @@
         <h1>HTML & CSS</h1>
     </div>
 
-    <div class="row">
+    <div class="row1">
         <div class="column1">
             <h1>CSS</h1>
             <hr>
@@ -40,7 +41,7 @@
         </div>
     </div>
     
-    <div class="row">
+    <div class="row1">
         <div class="column1">
             <h1>CSS Kezdő Szint</h1>
             <hr>
@@ -55,51 +56,48 @@
             </pre>
             <p>A fenti kód egy egyszerű CSS szabályt mutat be, amely a bekezdés (p) szövegét kékre színezi és középre igazítja.</p>
         </div>
-    </div>
-    
-    <div class="row">
         <div class="column1">
             <h1>CSS Haladó Szint</h1>
             <hr>
             <p>A haladó szintű CSS programozás magában foglalja a komplex elrendezések és animációk használatát. Például egy egyszerű rács elrendezés létrehozása:</p>
             <pre class="code">
                 <code class="python">
-.container {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    gap: 10px;
-}
+    .container {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        gap: 10px;
+    }
     
-.item {
-    background-color: lightgray;
-    padding: 20px;
-    text-align: center;
-}
+    .item {
+        background-color: lightgray;
+        padding: 20px;
+        text-align: center;
+    }
                 </code>
             </pre>
             <p>A fenti kód egy egyszerű rács elrendezést mutat be, amely három oszlopból áll, és az elemek közötti távolság 10 pixel.</p>
         </div>
     </div>
     
-    <div class="row">
+    <div class="row1">
         <div class="column1">
             <h1>CSS Profi Szint</h1>
             <hr>
             <p>A profi szintű CSS programozás magában foglalja a fejlett technikákat, mint például a CSS változók, flexbox és grid layout használata, valamint a reszponzív dizájn. Például egy egyszerű animáció létrehozása:</p>
             <pre class="code">
-                <code>
-@keyframes example {
-    from {background-color: red;}
-    to {background-color: yellow;}
-}
+                <code class="python">
+    @keyframes example {
+        from {background-color: red;}
+        to {background-color: yellow;}
+    }
     
-div {
-    width: 100px;
-    height: 100px;
-    background-color: red;
-    animation-name: example;
-    animation-duration: 4s;
-}
+    div {
+        width: 100px;
+        height: 100px;
+        background-color: red;
+        animation-name: example;
+        animation-duration: 4s;
+    }
                 </code>
             </pre>
             <p>A fenti kód egy egyszerű animációt mutat be, amely egy div elem háttérszínét pirosról sárgára változtatja 4 másodperc alatt.</p>
@@ -109,16 +107,22 @@ div {
     <hr>
 
     <footer>
-        <div class="grid-container">
+        <div class="container">
             <div>
-                <div class="grid-item">
+                <div class="item">
                     <h1><a href="index.html">< Vissza a főoldalra</a></h1>
                 </div>
             </div>
+            
             <div>
-                <div class="grid-item">
+                <div class="item">
                     <h1><a href="web.html">Vissza a <mark><em>HTML</em></mark> részre ></a></h1>
                 </div>
+            </div>
+        </div>
+        <div>
+            <div class="item">
+                <h1>Ha esetleg egy kicsit jobban érdekel a <mark><em> CSS</em></mark> <a href="https://github.com/MagyarMark/ProgiSuli/blob/main/style.css">KATT IDE!</a> ezen a linken megtalálod az oldal Stílus beállításait</h1>
             </div>
         </div>
     </footer>

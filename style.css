@@ -81,6 +81,13 @@ li a:hover {
     padding: 25px 20px;
 }
 
+.row1 {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    padding: 25px 20px;
+}
+
 .column {
     background: linear-gradient(45deg, #000000, #1c1c1c);
     width: 100%;
@@ -151,6 +158,9 @@ li a:hover {
     }
     .python {
         font-size: 14px;
+    }
+    .column1 {
+        width: 100%;
     }
 }
 
@@ -242,13 +252,13 @@ li a:hover {
     }
 }
 
-.grid-container {
+.container {
     display: grid;
     grid-template-columns: auto auto ;
     padding: 25px;
 }
 
-.grid-item {
+.item {
     background: linear-gradient(45deg, #000000, #1c1c1c);
     width: 100%;
     max-width: 450px;
@@ -268,14 +278,14 @@ li a:hover {
     transition: all 0.3s ease-in-out;
 }
 
-.grid-item p{
+.item p{
     font-size: 20px;
     color: white;
     text-shadow: 0 0 5px #00F5D4, 0 0 10px #00F5D4;
 }
 
 @media screen and (max-width: 768px) {
-    .grid-container {
+    .container {
         grid-template-columns: auto;
     }
 }

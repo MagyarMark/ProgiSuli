@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/x-icon" href="png/PS.png">
     <title>ProgiSuli - Python</title>
 </head>
 <body>
@@ -44,14 +45,15 @@ print("Hello, World!")
             <hr>
             <p>A haladó szintű Python programozás magában foglalja az objektumorientált programozást, modulok és csomagok használatát, valamint a kivételkezelést. Például egy egyszerű osztály definiálása:</p>
             <pre class="code">
-                <code>
+                <code class="python">
 class Szemely:
     def __init__(self, nev, kor):
         self.nev = nev
         self.kor = kor
     
 def bemutatkozas(self):
-    print(f"Szia, a nevem {self.nev} és {self.kor} éves vagyok.")
+    print(f"Szia, a nevem {self.nev})
+    print(f"és {self.kor} éves vagyok.")
     
 szemely = Szemely("Anna", 25)
 szemely.bemutatkozas()
