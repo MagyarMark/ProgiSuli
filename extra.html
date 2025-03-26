@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
+    <script src="fgv.js"></script>
     <link rel="icon" type="image/x-icon" href="png/PS.png">
     <title>ProgiSuli - EXTRA</title>
 </head>
@@ -22,18 +23,52 @@
 
     <div class="row1">
         <div class="column">
-            <p>1.</p>
+            <h5>Egy egyszerű számológép, amely két számot összead</h5>
+        </div>
+        <div>
         </div>
         <div class="column">
-            <p>2.</p>
-        </div>
-        <div class="column">
-            <p>3.</p>
+            <p>Egyszerű Számológép</p>
+                <hr>
+                    <input type="number" id="szam" placeholder="Első szám">
+                    <input type="number" id="szam1" placeholder="Második szám">
+                    <br>
+                    <button onclick="osszead()">Összeadás</button>
+                    <button onclick="kivon()">Kivonás</button>
+                <hr>
+            <p>Eredmény: <span id="eredmeny">0</span></p>
         </div>
     </div>
-    <div class="row">
+    <div class="row1">
         <div class="column">
+            <h5>Véletlenszámot generál a gomb nyomásra 1 és 100 között</h5>
+        </div>
+        <div class="column">
+            <p>Véletlenszám Generátor</p>
+                <hr>
+                    <button onclick="Rm()" style="padding: 15px;">Generálás</button>
+                <hr>
+                <p style="padding: 15px;transform: translateY(20%);">Véletlenszám: <span id="RandomSzam">-</span></p>
+        </div>
+    </div>
+    <div class="row1">
+        <div class="column">
+            <h5>Gomb nyomásra megváltoztathatod egy szöveg színét</h5>
+        </div>
+        <div class="column">
+            <p>Szöveg Szín változtatás</p>
+                <hr>
+                    <p id="szoveg" style="padding: 25px;">Ez a szöveg színe változni fog!</p>
+                <hr>
+                <button onclick="RandomSzin()" style="padding: 15px;">Szín Változtatása</button>
+        </div>
+    </div>
 
+    <hr>
+
+    <div class="footer">
+        <div class="code">
+            <h1><a href="index.html">Vissza a főoldalra</a></h1>
         </div>
     </div>
 </body>
