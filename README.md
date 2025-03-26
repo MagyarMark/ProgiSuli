@@ -2,7 +2,7 @@
 
 Ez a projekt a középiskolai programozási tananyagok gyakorlásához készült. Az oldal különböző programozási nyelveket és technológiákat mutat be, mint például Python, C#, HTML és CSS.
 
-## Fájlok
+## Elemek
 
 ### index.html
 
