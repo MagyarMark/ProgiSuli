@@ -22,3 +22,4 @@ function RandomSzin() {
     const veletlenszin = szinek[Math.floor(Math.random() * szinek.length)];
     document.getElementById('szoveg').style.color = veletlenszin;
 }
+
