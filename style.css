@@ -371,6 +371,16 @@ li a:hover {
     }
 }
 
+.mobile-only {
+    display: none;
+}
+
+@media (max-width: 768px) {
+    .mobile-only {
+        display: inline-block;
+    }
+}
+
 .menu-toggle.active + .menu {
     display: flex;
 }
