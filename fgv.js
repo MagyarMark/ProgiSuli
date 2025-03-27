@@ -23,3 +23,10 @@ function RandomSzin() {
     document.getElementById('szoveg').style.color = veletlenszin;
 }
 
+function menubar(){
+    document.querySelector('.menu-toggle').addEventListener('click', function() {
+        this.classList.toggle('active');
+        document.querySelector('.menu').classList.toggle('show');
+    });
+}
+
