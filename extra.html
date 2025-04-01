@@ -4,18 +4,25 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="fgv.js">
     <script src="fgv.js"></script>
     <link rel="icon" type="image/x-icon" href="png/PS.png">
     <title>ProgiSuli - EXTRA</title>
 </head>
-<body>
-    <ul>
-        <li><a href="python.html">Python</a></li>
-        <li><a href="csharp.html">C#</a></li>
-        <li><a href="index.html"><img src="png/PS.png" width="32" height="32"></a></li>
-        <li><a href="web.html">Web</a></li>
-        <li><a href="extra.html">Extra</a></li>
-    </ul>
+<body onload="menubar()">
+    <nav>
+        <p style="display: inline-block">
+            <img src="png/PS.png" width="32" height="32" class="mobile-only">
+        </p>
+        <button class="menu-toggle" aria-label="Toggle navigation menu" style="float: right;">☰</button>
+        <ul class="menu">
+            <li><a href="python.html">Python</a></li>
+            <li><a href="csharp.html">C#</a></li>
+            <li><a href="index.html"><img src="png/PS.png" width="32" height="32" alt="Home"></a></li>
+            <li><a href="web.html">Web</a></li>
+            <li><a href="extra.html">Extra</a></li>
+        </ul>
+    </nav>
 <hr>
     <div class="header">
         <h1>Extrák</h1>

@@ -4,18 +4,28 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="fgv.js">
+    <script src="fgv.js"></script>
     <link rel="icon" type="image/x-icon" href="png/PS.png">
     <title>ProgiSuli - C#</title>
 </head>
-<body>
-    <ul>
-        <li><a href="python.html">Python</a></li>
-        <li><a href="csharp.html">C#</a></li>
-        <li><a href="index.html"><img src="png/PS.png" width="32" height="32"></a></li>
-        <li><a href="web.html">Web</a></li>
-        <li><a href="extra.html">Extra</a></li>
-      </ul>
+<body onload="menubar()">
+    <nav>
+        <p style="display: inline-block">
+            <img src="png/PS.png" width="32" height="32" class="mobile-only">
+        </p>
+        <button class="menu-toggle" aria-label="Toggle navigation menu" style="float: right;">☰</button>
+        <ul class="menu">
+            <li><a href="python.html">Python</a></li>
+            <li><a href="csharp.html">C#</a></li>
+            <li><a href="index.html"><img src="png/PS.png" width="32" height="32" alt="Home"></a></li>
+            <li><a href="web.html">Web</a></li>
+            <li><a href="extra.html">Extra</a></li>
+        </ul>
+    </nav>
+
 <hr>
+
     <div class="header">
         <h1>C#</h1>
     </div>
@@ -24,7 +34,12 @@
         <div class="column1">
             <h1>C# alapok</h1>
             <hr>
-            <p>A C# (ejtsd: "C-sharp") egy modern, objektumorientált programozási nyelv, amelyet a Microsoft fejlesztett ki. A C# nyelvet elsősorban a .NET keretrendszerrel együtt használják, és széles körben alkalmazzák asztali alkalmazások, webes alkalmazások, játékok és mobilalkalmazások fejlesztésére.</p>
+            <p class="szoveg">A C# (ejtsd: "C-sharp") egy modern, objektumorientált programozási nyelv, amelyet a Microsoft fejlesztett ki. A C# nyelvet elsősorban a .NET keretrendszerrel együtt használják, és széles körben alkalmazzák asztali alkalmazások, webes alkalmazások, játékok és mobilalkalmazások fejlesztésére.</p>
+            <br>
+            <p>
+                Ajánlatos használni egy kódszerkeztőt, például a <em><mark>Visual Studio</mark></em>-t, amely a C# kódokat egyszerűen szerkeszthet.
+                itt tudod letölteni -> <a href="https://visualstudio.microsoft.com/" target="_blank">link</a>.
+            </p>
         </div>
         <div class="column1">
             <h1>C# Bemutatás</h1>
@@ -46,6 +61,93 @@
             <p>A fenti kód egy egyszerű C# programot mutat be, amely kiírja a "Hello, World!" üzenetet a konzolra.</p>
         </div>
     </div>
+
+    <div class="row">
+        <div class="column1">
+            <h1>Változók és adattípusok</h1>
+            <hr>
+            <p>A C# nyelvben különböző adattípusokat használhatunk a változók deklarálásához. Az alábbi példa bemutatja néhány alapvető adattípus használatát:</p>
+            <pre class="code">
+                <code class="python">
+using System;
+
+class Program
+{
+    static void Main()
+    {
+      int szam = 42; // Egész szám
+      double tortSzam = 3.14; // Tört szám
+      string szoveg = "Hello, C#!"; // Szöveg
+      bool igaz = true; // Logikai érték
+
+      Console.WriteLine("Egész szám: " + szam);
+      Console.WriteLine("Tört szám: " + tortSzam);
+      Console.WriteLine("Szöveg: " + szoveg);
+      Console.WriteLine("Logikai érték: " + igaz);
+    }
+}
+                </code>
+            </pre>
+            <p>A fenti kód különböző adattípusokat használ, és kiírja azok értékét a konzolra.</p>
+        </div>
+        <div class="column1">
+            <h1>Feltételes utasítások</h1>
+            <hr>
+            <p>A C# nyelvben az <code>if</code>, <code>else if</code> és <code>else</code> utasításokat használhatjuk feltételek ellenőrzésére. Az alábbi példa bemutatja ezek használatát:</p>
+            <pre class="code">
+                <code class="python">
+using System;
+
+class Program
+{
+    static void Main()
+    {
+        int szam = 10;
+
+        if (szam > 0)
+        {
+            Console.WriteLine("A szám pozitív.");
+        }
+        else if (szam < 0)
+        {
+            Console.WriteLine("A szám negatív.");
+        }
+        else
+        {
+            Console.WriteLine("A szám nulla.");
+        }
+    }
+}
+            </code>
+            </pre>
+            <p>A fenti kód ellenőrzi, hogy a szám pozitív, negatív vagy nulla, és ennek megfelelő üzenetet ír ki.</p>
+    </div>
+</div>
+
+<div class="row">
+    <div class="column1">
+        <h1>Ciklusok</h1>
+        <hr>
+        <p>A C# nyelvben különböző ciklusokat használhatunk, például <code>for</code>, <code>while</code> és <code>do-while</code>. Az alábbi példa bemutatja a <code>for</code> ciklus használatát:</p>
+        <pre class="code">
+            <code class="python">
+    using System;
+
+    class Program
+    {
+        static void Main()
+        {
+            for (int i = 1; i <= 5; i++)
+            {
+                Console.WriteLine("Szám: " + i);
+            }
+        }
+    }
+            </code>
+        </pre>
+        <p>A fenti kód egy <code>for</code> ciklust használ, amely 1-től 5-ig kiírja a számokat a konzolra.</p>
+    </div>
+</div>
     
     <hr>
     
