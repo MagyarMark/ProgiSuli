@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="kocka.css">
     <link rel="stylesheet" href="fgv.js">
     <script src="fgv.js"></script>
     <link rel="icon" type="image/x-icon" href="png/PS.png">
@@ -91,18 +92,20 @@
     </div>
     <div class="row1">
         <div class="column">
-            <h5>css formázás</h5>
+            <h5>To do list</h5>
+            <hr>
+            <h5>Teendők listája</h5>
         </div>
         <div class="column">
-            <p>CSS formázás</p>
-                <hr>
-                <div class="css-formazott">
-                    <h1>Ez egy CSS formázott szöveg</h1>
-                    <p>Ez egy CSS formázott szöveg</p>
-                    <p>Ez egy CSS formázott szöveg</p>
-                    <p>Ez egy CSS formázott szöveg</p>
-                </div>
-                <hr>
+            <p>To do list</p>
+            <hr>
+            <input type="text" id="newTask" placeholder="Új feladat">
+            <button onclick="addTask()">Hozzáadás</button>
+            <p>Teendők:</p>
+            <ul id="taskList" class="task-list"></ul>
+            <hr>
+            <p>feladatok száma: <span id="taskCount">0</span></p>
+
         </div>
     </div>
 

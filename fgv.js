@@ -30,3 +30,32 @@ function menubar(){
     });
 }
 
+function addTask() {
+    const taskInput = document.getElementById('newTask');
+    const taskList = document.getElementById('taskList');
+    const taskCount = document.getElementById('taskCount');
+
+    if (taskInput.value.trim() !== '') {
+        const newTask = document.createElement('li');
+        newTask.textContent = document.createElement('br');
+        newTask.textContent = `${taskList.children.length + 1}. ${taskInput.value.trim()}`;
+        const deleteButton = document.createElement('button');
+        deleteButton.textContent = 'X';
+        deleteButton.style.color = 'RED';
+        deleteButton.onclick = function() {
+            taskList.removeChild(newTask);
+            updateTaskCount();
+        };
+        newTask.appendChild(deleteButton);
+        taskList.appendChild(newTask);
+        taskInput.value = '';
+        updateTaskCount();
+    }
+}
+
+function updateTaskCount() {
+    const taskList = document.getElementById('taskList');
+    const taskCount = document.getElementById('taskCount');
+    taskCount.textContent = taskList.children.length;
+}
+
