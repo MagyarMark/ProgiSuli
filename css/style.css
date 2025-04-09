@@ -1,12 +1,10 @@
 body {
     background-color: black;
-    background: linear-gradient(180deg, white);
     background-size: 200% 200%;
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     font-family: 'Roboto', sans-serif;
-    transition: background 0.1s ease-in-out;
 }
 
 ul {
