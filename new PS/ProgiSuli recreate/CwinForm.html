@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>C# Windows Forms – ProgiSuli</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://cdn.jsdelivr.net/npm/prismjs/themes/prism-tomorrow.css" rel="stylesheet" />
+  <script src="https://cdn.jsdelivr.net/npm/prismjs/prism.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/prismjs/components/prism-csharp.min.js"></script>
+</head>
+<body>
+    <header>
+        <h1>C# Windows Forms</h1>
+        <button id="menuToggle" aria-label="Menü megnyitása">☰</button>
+        <nav id="mainNav">
+          <a href="index.html">Kezdőlap</a>
+          <a href="index.html#courses">Tananyag</a>
+          <a href="rolunk.html">Rólunk</a>
+          <a href="kapcsolat.html">Kapcsolat</a>
+        </nav>
+    </header>
+
+  <main class="module-flex">
+    <section class="module-section" id="winform">
+      <h2>🪟 C# Windows Forms</h2>
+      <p>A Windows Forms (WinForms) segítségével grafikus felhasználói felületeket (GUI) készíthetünk .NET környezetben.</p>
+      <pre><code class="language-csharp">
+using System;
+using System.Windows.Forms;
+
+public class MyForm : Form
+{
+    public MyForm()
+    {
+        this.Text = "ProgiSuli - Ablak";
+    }
+
+    [STAThread]
+    static void Main()
+    {
+        Application.Run(new MyForm());
+    }
+}
+      </code></pre>
+    </section>
+
+    <section class="module-section">
+      <h2>🛠️ Gomb és eseménykezelés</h2>
+      <p>Hozzunk létre egy gombot és figyeljük, amikor rákattintanak:</p>
+      <pre><code class="language-csharp">
+public MyForm()
+{
+    Button btn = new Button();
+    btn.Text = "Kattints rám!";
+    btn.Click += (s, e) => MessageBox.Show("Szia!");
+    Controls.Add(btn);
+}
+      </code></pre>
+    </section>
+
+    <section class="module-section">
+      <h2>🎨 Alapelemek</h2>
+      <ul>
+        <li><strong>Label</strong> – Szöveg megjelenítés</li>
+        <li><strong>TextBox</strong> – Szövegbevitel</li>
+        <li><strong>Button</strong> – Gomb</li>
+        <li><strong>CheckBox</strong>, <strong>RadioButton</strong> – Beállítások</li>
+        <li><strong>PictureBox</strong> – Képmegjelenítés</li>
+      </ul>
+    </section>
+
+    <!-- Kvíz gomb -->
+    <section class="quiz-launch">
+      <button class="btn" onclick="toggleQuiz()">🎯 Teszteld a tudásod!</button>
+    </section>
+
+    <!-- Kvíz szekció -->
+    <section id="quizSection" class="quiz" style="display:none;">
+      <h3>✅ Kvíz: Mit tanultál?</h3>
+      <form id="quizForm">
+        <p>1. Melyik osztályból származik az ablak?</p>
+        <label><input type="radio" name="q1" value="a"> Application</label><br>
+        <label><input type="radio" name="q1" value="b"> Window</label><br>
+        <label><input type="radio" name="q1" value="c"> Form</label><br>
+
+        <p>2. Melyik metódussal indítjuk el az alkalmazást?</p>
+        <label><input type="radio" name="q2" value="a"> Run()</label><br>
+        <label><input type="radio" name="q2" value="b"> Start()</label><br>
+        <label><input type="radio" name="q2" value="c"> Application.Run()</label><br>
+
+        <button class="btn" type="submit">Ellenőrzés</button>
+        <p id="quizResult"></p>
+      </form>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-content">
+      <div class="footer-left">
+        <h3>ProgiSuli</h3>
+        <p>&copy; 2025 Minden jog fenntartva.</p>
+      </div>
+      <div class="footer-links">
+        <a href="index.html">Kezdőlap</a>
+        <a href="kapcsolat.html">Kapcsolat</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // menu
+    document.getElementById("menuToggle").addEventListener("click", function () {
+    document.getElementById("mainNav").classList.toggle("active");
+  });
+  </script>
+  <script>
+    function toggleQuiz() {
+      const quiz = document.getElementById("quizSection");
+      quiz.style.display = (quiz.style.display === "block") ? "none" : "block";
+    }
+
+    document.getElementById("quizForm").addEventListener("submit", function (e) {
+      e.preventDefault();
+      const q1 = document.querySelector('input[name="q1"]:checked')?.value;
+      const q2 = document.querySelector('input[name="q2"]:checked')?.value;
+      const result = document.getElementById("quizResult");
+
+      if (q1 === "c" && q2 === "c") {
+        result.textContent = "🎉 Szuper! Helyesen válaszoltál!";
+      } else {
+        result.textContent = "❌ Nem minden válasz helyes. Próbáld újra!";
+      }
+    });
+  </script>
+</body>
+</html>

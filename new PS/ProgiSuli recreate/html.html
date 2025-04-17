@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>HTML Modul – ProgiSuli</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://cdn.jsdelivr.net/npm/prismjs/themes/prism-tomorrow.css" rel="stylesheet" />
+  <script src="https://cdn.jsdelivr.net/npm/prismjs/prism.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/prismjs/components/prism-html.min.js"></script>
+</head>
+<body>
+  <header>
+    <h1><img src="https://upload.wikimedia.org/wikipedia/commons/6/61/HTML5_logo_and_wordmark.svg" alt="HTML logó" width="25">HTML Modul</h1>
+    <button id="menuToggle" aria-label="Menü megnyitása">☰</button>
+    <nav id="mainNav">
+      <a href="index.html">Kezdőlap</a>
+      <a href="index.html#courses">Tananyag</a>
+      <a href="rolunk.html">Rólunk</a>
+      <a href="kapcsolat.html">Kapcsolat</a>
+    </nav>
+</header>
+
+  <main class="module-flex">
+    <section class="module-section">
+      <h2>HTML alapjai</h2>
+      <p>A HTML a webes tartalom alapja. Egy egyszerű HTML dokumentum így néz ki:</p>
+      <pre><code class="language-html">
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+  &lt;head&gt;
+    &lt;title&gt;Cím&lt;/title&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    &lt;h1&gt;Helló Világ!&lt;/h1&gt;
+  &lt;/body&gt;
+&lt;/html&gt;
+      </code></pre>
+    </section>
+
+    <section class="module-section">
+      <h2>HTML elemek</h2>
+      <p><b>Gyakori tagek:</b></p>
+      <ul>
+        <li><code>&lt;p&gt;</code> – bekezdés, szövegblokkokhoz használjuk.</li>
+        <li><code>&lt;a&gt;</code> – hivatkozás, egy másik oldalra vagy fájlra mutat.</li>
+        <li><code>&lt;img&gt;</code> – kép megjelenítésére szolgál.</li>
+        <li><code>&lt;div&gt;</code> – konténer elem, más elemek csoportosítására.</li>
+        <li><code>&lt;h1&gt;</code> – főcím, amit általában egyszer használunk egy oldalon.</li>
+        <li><code>&lt;ul&gt;</code> – rendezetlen lista, <code>&lt;li&gt;</code> elemekkel.</li>
+        <li><code>&lt;ol&gt;</code> – számozott lista, szintén <code>&lt;li&gt;</code> elemekkel.</li>
+        <li><code>&lt;strong&gt;</code> – fontos (félkövér) kiemelés.</li>
+        <li><code>&lt;em&gt;</code> – hangsúlyos (dőlt) kiemelés.</li>
+        <li><code>&lt;input&gt;</code> – adatbevitel (pl. szövegmező).</li>
+        <li><code>&lt;form&gt;</code> – űrlap beküldéshez.</li>
+        <li><code>&lt;button&gt;</code> – kattintható gomb.</li>
+        <li><code>&lt;table&gt;</code> – táblázat létrehozására.</li>
+      </ul>
+    </section>
+
+    <section class="module-section">
+      <h2>Struktúra és példák</h2>
+      <p>Az oldal szerkezete: html → head → body. Alább egy saját példa:</p>
+      <pre><code class="language-html">
+&lt;!DOCTYPE html&gt;
+&lt;html lang="hu"&gt;
+&lt;head&gt;
+  &lt;meta charset="UTF-8"&gt;
+  &lt;title&gt;Saját oldal&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+  &lt;h1&gt;Üdvözöllek!&lt;/h1&gt;
+  &lt;p&gt;Ez az én első oldalam.&lt;/p&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+      </code></pre>
+    </section>
+
+    <section class="module-section">
+      <h2>Gyakorló HTML űrlap</h2>
+      <p>Íme egy példa egy egyszerű HTML űrlapra, amelyet gyakran használnak felhasználói adatok bekérésére:</p>
+      <pre><code class="language-html">
+&lt;form&gt;
+  &lt;label for="name"&gt;Név:&lt;/label&gt;
+  &lt;input type="text" id="name" name="name"&gt;
+  &lt;br&gt;
+  &lt;label for="email"&gt;Email:&lt;/label&gt;
+  &lt;input type="email" id="email" name="email"&gt;
+  &lt;br&gt;
+  &lt;button type="submit"&gt;Küldés&lt;/button&gt;
+&lt;/form&gt;
+      </code></pre>
+
+      <form class="demo-form" onsubmit="return false">
+        <label for="demoName">Név:</label>
+        <input type="text" id="demoName" placeholder="Írd be a neved">
+        <label for="demoEmail">Email:</label>
+        <input type="email" id="demoEmail" placeholder="pl. te@pelda.hu">
+        <button onclick="alert('Köszönjük, hogy kitöltötted!')">Küldés</button>
+      </form>
+    </section>
+
+
+    <section class="quiz-launch">
+      <button class="btn" onclick="toggleQuiz()">
+        🎯 Teszteld a tudásod!
+      </button>
+    </section>
+
+    <section id="quizSection" class="quiz" style="display:none;">
+      <h3>✅ Kvíz: Mit tanultál?</h3>
+      <form id="quizForm">
+        <p>1. Mi jeleníti meg a főcímet?</p>
+        <label><input type="radio" name="q1" value="a"> &lt;p&gt;</label><br>
+        <label><input type="radio" name="q1" value="b"> &lt;h1&gt;</label><br>
+        <label><input type="radio" name="q1" value="c"> &lt;img&gt;</label><br>
+
+        <p>2. Mi a dokumentum első sora?</p>
+        <label><input type="radio" name="q2" value="a"> &lt;html&gt;</label><br>
+        <label><input type="radio" name="q2" value="b"> &lt;!DOCTYPE html&gt;</label><br>
+        <label><input type="radio" name="q2" value="c"> &lt;head&gt;</label><br>
+
+        <button class="btn" type="submit">Ellenőrzés</button>
+        <p id="quizResult"></p>
+      </form>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-content">
+      <div class="footer-left">
+        <h3>ProgiSuli</h3>
+        <p>&copy; 2025 Minden jog fenntartva.</p>
+      </div>
+      <div class="footer-links">
+        <a href="index.html">Kezdőlap</a>
+        <a href="kapcsolat.html">Kapcsolat</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // menu
+    document.getElementById("menuToggle").addEventListener("click", function () {
+    document.getElementById("mainNav").classList.toggle("active");
+  });
+  </script>
+  <script>
+    function toggleQuiz() {
+      const quiz = document.getElementById("quizSection");
+      quiz.style.display = (quiz.style.display === "block") ? "none" : "block";
+    }
+  </script>
+  <script>
+    document.getElementById("quizForm").addEventListener("submit", function (e) {
+      e.preventDefault();
+      const q1 = document.querySelector('input[name="q1"]:checked')?.value;
+      const q2 = document.querySelector('input[name="q2"]:checked')?.value;
+      const result = document.getElementById("quizResult");
+
+      if (q1 === "b" && q2 === "b") {
+        result.textContent = "🎉 Ügyes vagy! Mindkét válasz helyes!";
+      } else {
+        result.textContent = "❌ Nem minden válasz helyes. Próbáld újra!";
+      }
+    });
+  </script>
+</body>
+</html>

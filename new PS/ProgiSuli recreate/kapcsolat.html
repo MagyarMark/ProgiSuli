@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Kapcsolat – ProgiSuli</title>
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+  <header>
+    <h1>📩 Kapcsolat</h1>
+    <button id="menuToggle" aria-label="Menü megnyitása">☰</button>
+    <nav id="mainNav">
+      <a href="index.html">Kezdőlap</a>
+      <a href="index.html#courses">Tananyag</a>
+      <a href="rolunk.html">Rólunk</a>
+      <a href="kapcsolat.html">Kapcsolat</a>
+    </nav>
+</header>
+
+  <main class="contact-page">
+    <section class="contact-hero">
+      <h2>📬 Lépj kapcsolatba velünk!</h2>
+      <p>Ha kérdésed, észrevételed vagy javaslatod van, bátran írj nekünk az alábbi űrlapon keresztül.</p>
+    </section>
+
+    <section class="contact-form-container">
+      <form action="https://formspree.io/f/xldjkgpp" method="POST" class="contact-form">
+        <label for="name">Név</label>
+        <input type="text" id="name" name="name" required>
+
+        <label for="email">Email cím</label>
+        <input type="email" id="email" name="email" required>
+
+        <label for="message">Üzenet</label>
+        <textarea id="message" name="message" rows="5" required></textarea>
+
+        <button type="submit">✉️ Üzenet küldése</button>
+      </form>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-content">
+      <p>&copy; 2025 ProgiSuli. Minden jog fenntartva.</p>
+    </div>
+  </footer>
+  <script>
+    // menu
+    document.getElementById("menuToggle").addEventListener("click", function () {
+    document.getElementById("mainNav").classList.toggle("active");
+  });
+  </script>
+</body>
+</html>
+

@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>JavaScript Modul – ProgiSuli</title>
+  <link rel="stylesheet" href="style.css"/>
+  <link href="https://cdn.jsdelivr.net/npm/prismjs/themes/prism-tomorrow.css" rel="stylesheet" />
+  <script src="https://cdn.jsdelivr.net/npm/prismjs/prism.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/prismjs/components/prism-javascript.min.js"></script>
+</head>
+<body>
+  <header>
+    <h1>🧠 JavaScript Modul</h1>
+    <button id="menuToggle" aria-label="Menü megnyitása">☰</button>
+    <nav id="mainNav">
+      <a href="index.html">Kezdőlap</a>
+      <a href="index.html#courses">Tananyag</a>
+      <a href="rolunk.html">Rólunk</a>
+      <a href="kapcsolat.html">Kapcsolat</a>
+    </nav>
+</header>
+
+  <main class="module-flex">
+    <section class="module-section">
+      <h2>🔤 Kiírás a konzolra</h2>
+      <p>A <code>console.log()</code> segítségével írhatunk ki üzenetet a konzolra.</p>
+      <pre><code class="language-javascript">
+console.log("Helló, JavaScript!");
+      </code></pre>
+    </section>
+
+    <section class="module-section">
+      <h2>🔢 Változók</h2>
+      <p>Változók létrehozása <code>let</code>, <code>const</code> vagy <code>var</code> kulcsszóval:</p>
+      <pre><code class="language-javascript">
+let nev = "Anna";
+const kor = 25;
+console.log(nev, kor);
+      </code></pre>
+    </section>
+
+    <section class="module-section">
+      <h2>🧮 Feltételek</h2>
+      <p>Az <code>if</code> szerkezet hasonló más nyelvekhez:</p>
+      <pre><code class="language-javascript">
+let szam = 10;
+if (szam > 5) {
+  console.log("Nagyobb mint 5");
+} else {
+  console.log("Nem nagyobb");
+}
+      </code></pre>
+    </section>
+
+    <section class="module-section">
+      <h2>🔁 Ciklus</h2>
+      <p>A <code>for</code> ciklus lehetővé teszi többszöri végrehajtást:</p>
+      <pre><code class="language-javascript">
+for (let i = 0; i < 5; i++) {
+  console.log(i);
+}
+      </code></pre>
+    </section>
+
+    <section class="quiz-launch">
+        <button class="btn" onclick="toggleQuiz()">
+          🎯 Teszteld a tudásod!
+        </button>
+      </section>
+
+    <section id="quizSection" class="quiz" style="display: none;">
+      <h3>✅ JavaScript Kvíz</h3>
+      <form id="quizForm">
+        <p>1. Melyik parancs ír ki üzenetet a böngésző konzoljára?</p>
+        <label><input type="radio" name="q1" value="a"> alert()</label><br/>
+        <label><input type="radio" name="q1" value="b"> print()</label><br/>
+        <label><input type="radio" name="q1" value="c"> console.log()</label><br/>
+
+        <p>2. Mi a különbség a <code>let</code> és <code>const</code> között?</p>
+        <label><input type="radio" name="q2" value="a"> A <code>let</code> konstans, a <code>const</code> változó</label><br/>
+        <label><input type="radio" name="q2" value="b"> A <code>const</code> nem változtatható meg</label><br/>
+        <label><input type="radio" name="q2" value="c"> Nincs különbség</label><br/>
+
+        <button class="btn" type="submit">Ellenőrzés</button>
+        <p id="quizResult"></p>
+      </form>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-content">
+      <div class="footer-left">
+        <h3>ProgiSuli</h3>
+        <p>&copy; 2025 Minden jog fenntartva.</p>
+      </div>
+      <div class="footer-links">
+        <a href="index.html">Kezdőlap</a>
+        <a href="kapcsolat.html">Kapcsolat</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // menu
+    document.getElementById("menuToggle").addEventListener("click", function () {
+    document.getElementById("mainNav").classList.toggle("active");
+  });
+  </script>
+  <script>
+    function toggleQuiz() {
+      const quiz = document.getElementById("quizSection");
+      quiz.style.display = (quiz.style.display === "block") ? "none" : "block";
+    }
+  </script>
+  <script>
+    document.getElementById("quizForm").addEventListener("submit", function (e) {
+      e.preventDefault();
+      const q1 = document.querySelector('input[name="q1"]:checked')?.value;
+      const q2 = document.querySelector('input[name="q2"]:checked')?.value;
+      const result = document.getElementById("quizResult");
+      if (q1 === "c" && q2 === "b") {
+        result.textContent = "🎉 Ügyes vagy! Mindkét válasz helyes!";
+      } else {
+        result.textContent = "❌ Nem minden válasz helyes. Próbáld újra!";
+      }
+    });
+  </script>
+</body>
+</html>

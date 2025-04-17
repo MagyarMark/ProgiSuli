@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>C# Console – ProgiSuli</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://cdn.jsdelivr.net/npm/prismjs/themes/prism-tomorrow.css" rel="stylesheet" />
+  <script src="https://cdn.jsdelivr.net/npm/prismjs/prism.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/prismjs/components/prism-csharp.min.js"></script>
+</head>
+<body>
+    <header>
+        <h1>C# Console Modul</h1>
+        <button id="menuToggle" aria-label="Menü megnyitása">☰</button>
+        <nav id="mainNav">
+          <a href="index.html">Kezdőlap</a>
+          <a href="index.html#courses">Tananyag</a>
+          <a href="rolunk.html">Rólunk</a>
+          <a href="kapcsolat.html">Kapcsolat</a>
+        </nav>
+    </header>
+
+  <main class="module-flex">
+    <section class="module-section" id="csharp">
+      <h2>🖥️ C# Console alkalmazások</h2>
+      <p>A C# Console alkalmazások lehetővé teszik a szöveges interakciót a felhasználóval.</p>
+      <pre><code class="language-csharp">
+using System;
+
+class Program {
+  static void Main() {
+    Console.WriteLine("Helló, Világ!");
+  }
+}
+      </code></pre>
+    </section>
+
+    <section class="module-section">
+      <h2>📥 Bemenet & 📤 Kimenet</h2>
+      <p>Hogyan kérjünk be adatot a felhasználótól:</p>
+      <pre><code class="language-csharp">
+Console.Write("Mi a neved? ");
+string nev = Console.ReadLine();
+Console.WriteLine("Üdv, " + nev + "!");
+      </code></pre>
+    </section>
+
+    <section class="module-section">
+      <h2>🔁 Vezérlési szerkezetek</h2>
+      <p>Példa egy ciklusra:</p>
+      <pre><code class="language-csharp">
+for (int i = 1; i <= 5; i++) {
+  Console.WriteLine("Szám: " + i);
+}
+      </code></pre>
+    </section>
+
+    <!-- Kvíz gomb -->
+    <section class="quiz-launch">
+      <button class="btn" onclick="toggleQuiz()">🎯 Teszteld a tudásod!</button>
+    </section>
+
+    <!-- Kvíz szekció -->
+    <section id="quizSection" class="quiz" style="display:none;">
+      <h3>✅ Kvíz: Mit tanultál?</h3>
+      <form id="quizForm">
+        <p>1. Melyik metódussal írunk ki szöveget?</p>
+        <label><input type="radio" name="q1" value="a"> Console.Input()</label><br>
+        <label><input type="radio" name="q1" value="b"> Console.WriteLine()</label><br>
+        <label><input type="radio" name="q1" value="c"> Print()</label><br>
+
+        <p>2. Hogyan olvasunk be adatot?</p>
+        <label><input type="radio" name="q2" value="a"> Console.ReadLine()</label><br>
+        <label><input type="radio" name="q2" value="b"> Console.Write()</label><br>
+        <label><input type="radio" name="q2" value="c"> Read.Input()</label><br>
+
+        <button class="btn" type="submit">Ellenőrzés</button>
+        <p id="quizResult"></p>
+      </form>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-content">
+      <div class="footer-left">
+        <h3>ProgiSuli</h3>
+        <p>&copy; 2025 Minden jog fenntartva.</p>
+      </div>
+      <div class="footer-links">
+        <a href="index.html">Kezdőlap</a>
+        <a href="kapcsolat.html">Kapcsolat</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    function toggleQuiz() {
+      const quiz = document.getElementById("quizSection");
+      quiz.style.display = (quiz.style.display === "block") ? "none" : "block";
+    }
+
+    document.getElementById("quizForm").addEventListener("submit", function (e) {
+      e.preventDefault();
+      const q1 = document.querySelector('input[name="q1"]:checked')?.value;
+      const q2 = document.querySelector('input[name="q2"]:checked')?.value;
+      const result = document.getElementById("quizResult");
+
+      if (q1 === "b" && q2 === "a") {
+        result.textContent = "🎉 Helyes válaszok! Szép munka!";
+      } else {
+        result.textContent = "❌ Nem minden válasz helyes. Próbáld újra!";
+      }
+    });
+
+    // menu
+    document.getElementById("menuToggle").addEventListener("click", function () {
+    document.getElementById("mainNav").classList.toggle("active");
+  });
+
+
+  </script>
+</body>
+</html>

@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>CSS Modul – ProgiSuli</title>
+  <link rel="stylesheet" href="style.css"/>
+  <link href="https://cdn.jsdelivr.net/npm/prismjs/themes/prism-tomorrow.css" rel="stylesheet" />
+  <script src="https://cdn.jsdelivr.net/npm/prismjs/prism.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/prismjs/components/prism-css.min.js"></script>
+</head>
+<body>
+  <header>
+    <h1>🎨 CSS Modul</h1>
+    <button id="menuToggle" aria-label="Menü megnyitása">☰</button>
+    <nav id="mainNav">
+      <a href="index.html">Kezdőlap</a>
+      <a href="index.html#courses">Tananyag</a>
+      <a href="rolunk.html">Rólunk</a>
+      <a href="kapcsolat.html">Kapcsolat</a>
+    </nav>
+</header>
+
+  <main class="module-flex">
+    <section class="module-section">
+      <h2>🎨 Alapszínek</h2>
+      <p>Színek beállítása <code>color</code> és <code>background-color</code> használatával.</p>
+      <pre><code class="language-css">
+body {
+  background-color: #121212;
+  color: white;
+}
+      </code></pre>
+    </section>
+
+    <section class="module-section">
+      <h2>🖋️ Szövegformázás</h2>
+      <p>Szöveg igazítása, mérete, betűtípus:</p>
+      <pre><code class="language-css">
+h1 {
+  font-size: 2rem;
+  font-family: 'Segoe UI', sans-serif;
+  text-align: center;
+}
+      </code></pre>
+    </section>
+
+    <section class="module-section">
+      <h2>📦 Box model</h2>
+      <p>A CSS box model a térközök és méretek beállítására szolgál:</p>
+      <pre><code class="language-css">
+.container {
+  margin: 20px;
+  padding: 10px;
+  border: 2px solid #0af;
+}
+      </code></pre>
+    </section>
+
+    <section class="module-section">
+      <h2>📐 Flexbox alapok</h2>
+      <p>A Flexbox segít rugalmasan elrendezni az elemeket.</p>
+      <pre><code class="language-css">
+.flex-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+      </code></pre>
+    </section>
+
+    <section class="quiz-launch">
+      <button class="btn" onclick="toggleQuiz()">
+        🎯 Teszteld a tudásod!
+      </button>
+    </section>
+
+    <section id="quizSection" class="quiz" style="display: none;">
+      <h3>✅ CSS Kvíz</h3>
+      <form id="quizForm">
+        <p>1. Melyik CSS tulajdonsággal lehet beállítani a szöveg színét?</p>
+        <label><input type="radio" name="q1" value="a"> background-color</label><br/>
+        <label><input type="radio" name="q1" value="b"> color</label><br/>
+        <label><input type="radio" name="q1" value="c"> font-family</label><br/>
+
+        <p>2. Melyik érték rendezi el az elemeket középre vízszintesen flexboxban?</p>
+        <label><input type="radio" name="q2" value="a"> align-items: center</label><br/>
+        <label><input type="radio" name="q2" value="b"> justify-content: center</label><br/>
+        <label><input type="radio" name="q2" value="c"> text-align: center</label><br/>
+
+        <button class="btn" type="submit">Ellenőrzés</button>
+        <p id="quizResult"></p>
+      </form>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-content">
+      <div class="footer-left">
+        <h3>ProgiSuli</h3>
+        <p>&copy; 2025 Minden jog fenntartva.</p>
+      </div>
+      <div class="footer-links">
+        <a href="index.html">Kezdőlap</a>
+        <a href="kapcsolat.html">Kapcsolat</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // menu
+    document.getElementById("menuToggle").addEventListener("click", function () {
+    document.getElementById("mainNav").classList.toggle("active");
+  });
+  </script>
+  <script>
+    function toggleQuiz() {
+      const quiz = document.getElementById("quizSection");
+      quiz.style.display = (quiz.style.display === "block") ? "none" : "block";
+    }
+  </script>
+  <script>
+    document.getElementById("quizForm").addEventListener("submit", function (e) {
+      e.preventDefault();
+      const q1 = document.querySelector('input[name="q1"]:checked')?.value;
+      const q2 = document.querySelector('input[name="q2"]:checked')?.value;
+      const result = document.getElementById("quizResult");
+      if (q1 === "b" && q2 === "b") {
+        result.textContent = "🎉 Szép munka! Mindkét válasz helyes!"; 
+      } else {
+        result.textContent = "❌ Nem minden válasz helyes. Próbáld újra!"; 
+      }
+    });
+  </script>
+</body>
+</html>

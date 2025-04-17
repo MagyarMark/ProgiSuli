@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Rólunk – ProgiSuli</title>
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+  <header>
+    <h1>👥 Rólunk</h1>
+    <button id="menuToggle" aria-label="Menü megnyitása">☰</button>
+    <nav id="mainNav">
+      <a href="index.html">Kezdőlap</a>
+      <a href="index.html#courses">Tananyag</a>
+      <a href="rolunk.html">Rólunk</a>
+      <a href="kapcsolat.html">Kapcsolat</a>
+    </nav>
+</header>
+
+  <main class="about-page">
+    <section class="about-hero">
+      <h2>Üdvözlünk a ProgiSuli világában!</h2>
+      <p>Mi egy lelkes fejlesztői csapat vagyunk, akik hisznek abban, hogy a programozás tanulása lehet izgalmas, játékos és könnyen hozzáférhető bárki számára.</p>
+    </section>
+
+    <section class="about-mission">
+      <h3>🎯 Küldetésünk</h3>
+      <p>
+        Az a célunk, hogy modern és barátságos felületen keresztül tanítsuk meg a HTML, CSS, JavaScript, Python és egyéb technológiák alapjait.  
+        A <strong>ProgiSuli</strong> nem csak egy oktatási platform – ez egy közösség, ahol tanulhatsz, fejlődhetsz és gyakorolhatsz valódi visszajelzésekkel.
+      </p>
+    </section>
+
+    <section class="about-team">
+      <h3>🧑‍💻 A csapat</h3>
+      <div class="team-grid">
+        <div class="team-member">
+            <img src="https://i.pravatar.cc/150?img=3" alt="Fejlesztő" />
+          <h4>Márk</h4>
+          <p>Alapító, Frontend fejlesztő</p>
+        </div>
+        <div class="team-member">
+            <img src="https://i.pravatar.cc/150?img=3" alt="Fejlesztő" />
+            <h4>Márk</h4>
+            <p>Design, UX/UI</p>
+        </div>
+        <div class="team-member">
+            <img src="https://i.pravatar.cc/150?img=3" alt="Fejlesztő" />
+          <h4>Márk</h4>
+          <p>Backend / Tananyag író</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="about-values">
+      <h3>💡 Értékeink</h3>
+      <ul>
+        <li>🔄 Gyakorlatra épülő tanulás</li>
+        <li>🌙 Dark/Light mód támogatás</li>
+        <li>📊 Haladás követése</li>
+        <li>🤝 Közösségi támogatás</li>
+      </ul>
+    </section>
+  </main>
+
+  <script>
+    // menu
+    document.getElementById("menuToggle").addEventListener("click", function () {
+    document.getElementById("mainNav").classList.toggle("active");
+  });
+  </script>
+  <footer class="footer">
+    <div class="footer-content">
+      <p>&copy; 2025 ProgiSuli. Minden jog fenntartva.</p>
+      <div class="footer-links">
+        <a href="kapcsolat.html">Kapcsolat</a>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
