@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Dungeon of Code – ProgiSuli</title>
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+  <header>
+    <h1>🧩 Dungeon of Code</h1>
+    <button id="menuToggle" aria-label="Menü megnyitása">☰</button>
+    <nav id="mainNav">
+      <a href="index.html">Kezdőlap</a>
+      <a href="index.html#courses">Tananyag</a>
+      <a href="rolunk.html">Rólunk</a>
+      <a href="kapcsolat.html">Kapcsolat</a>
+    </nav>
+  </header>
+
+  <main class="dungeon-page">
+    <section class="dungeon-intro">
+      <h2>👾 Mi az a Dungeon of Code?</h2>
+      <p>
+        A <strong>Dungeon of Code</strong> egy játékosított programozási kaland, ahol minden szobában egy programozási kihívás vár rád.
+        Kattints az útvonalra, haladj a labirintusban, oldd meg a feladatokat, és juss el a kijáratig!
+      </p>
+    </section>
+
+    <section class="dungeon-features">
+      <h3>🧱 Fő jellemzők</h3>
+      <ul>
+        <li>🖱️ Egérkattintással vezérelhető karakter</li>
+        <li>🧠 Minden szobában egy kihívás HTML, CSS, JS, C# vagy Python témában</li>
+        <li>❌ 2 hibás válasz után ajánlás gyakorlásra (ProgiSuli modulok)</li>
+        <li>🎁 Bónusz szobák és rejtett jutalmak</li>
+        <li>📱 Mobilra is optimalizált kialakítás</li>
+        <li>🌌 Dark/Light mód támogatás</li>
+      </ul>
+    </section>
+
+    <section class="dungeon-preview">
+      <h3>📷 Előnézet</h3>
+      <img src="png/dungeon-preview.png" alt="Dungeon of Code előnézet" class="preview-img"/>
+      <p class="preview-caption">A játék fejlesztés alatt áll – hamarosan játszható verzióban is elérhető lesz!</p>
+    </section>
+
+    <section class="dungeon-play">
+      <h3>🎮 Készen állsz?</h3>
+      <p>Amint elérhető, itt kezdheted el a kalandot:</p>
+      <a href="arena.html" class="btn disabled">🔒 Játék indítása (hamarosan)</a>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-content">
+      <div class="footer-left">
+        <h3>ProgiSuli</h3>
+        <p>&copy; 2025 ProgiSuli. Minden jog fenntartva.</p>
+      </div>
+      <div class="footer-links">
+        <a href="index.html">Kezdőlap</a>
+        <a href="index.html#courses">Tananyag</a>
+        <a href="kapcsolat.html">Kapcsolat</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById("menuToggle").addEventListener("click", function () {
+      document.getElementById("mainNav").classList.toggle("active");
+    });
+    
+  </script>
+  
+</body>
+</html>

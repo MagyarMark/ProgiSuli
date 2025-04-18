@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Dungeon of Code</title>
+  <style>
+    body {
+  margin: 0;
+  background-color: #1e1e2f;
+  font-family: 'Segoe UI', sans-serif;
+  color: #fff;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #121427;
+  padding: 1rem 2rem;
+  color: white;
+}
+
+.header nav a {
+  color: #ccc;
+  text-decoration: none;
+  margin-left: 1rem;
+}
+
+.header nav a:hover {
+  color: white;
+}
+
+.dungeon-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  padding: 2rem;
+}
+
+.game-grid {
+  margin: 0 auto;
+  background-image: url('png/map.png');
+  background-repeat: no-repeat;
+  display: grid;
+  grid-template-columns: repeat(5, 64px);
+  grid-template-rows: repeat(5, 64px);
+  gap: 50px;
+  background-color: #1a1a2a;
+  padding: 8px;
+  height: 665px
+}
+
+.tile {
+  width: 64px;
+  height: 64px;
+  background-image: url('tile.png');
+  background-size: cover;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#player {
+  width: 64px;
+  height: 64px;
+}
+
+.challenge-box {
+  background: rgba(255, 255, 255, 0.05);
+  padding: 1.5rem;
+  border-radius: 10px;
+  width: 300px;
+}
+
+.challenge-box h2 {
+  margin-top: 0;
+  color: #fff;
+}
+
+.challenge-box input {
+  width: 100%;
+  padding: 0.5rem;
+  margin: 1rem 0;
+  border: none;
+  border-radius: 5px;
+  background-color: #222;
+  color: #fff;
+}
+
+.challenge-box button {
+  padding: 0.5rem 1rem;
+  background-color: #3b82f6;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.challenge-box button:hover {
+  background-color: #2563eb;
+}
+
+.minimap {
+  display: grid;
+  grid-template-columns: repeat(5, 16px);
+  grid-template-rows: repeat(5, 16px);
+  gap: 2px;
+  margin-top: 2rem;
+}
+
+.minimap-tile {
+  width: 16px;
+  height: 16px;
+  background-color: #333;
+}
+
+.minimap-tile.active {
+  background-color: yellow;
+}
+
+  </style>
+</head>
+<body>
+  <header class="header">
+    <h1>🏰 Dungeon of Code</h1>
+    <nav>
+      <a href="index.html">Kezdőlap</a>
+      <a href="index.html#courses">Tananyag</a>
+      <a href="rolunk.html">Rólunk</a>
+      <a href="kapcsolat.html">Kapcsolat</a>
+    </nav>
+  </header>
+
+  <main class="dungeon-container">
+    <div class="game-grid" id="gameGrid">
+        <div class="tile" id="tile-0"><img src="png/player.png" id="player" alt="Játékos" /></div>
+        <script>
+            for(let i=1; i<30; i++) {
+              document.write(`<div class="tile" id="tile-${i}"></div>`);
+            }
+          </script>
+    </div>
+
+    <div class="challenge-box">
+      <h2>💡 Kihívás</h2>
+      <p>Mi a C# kiíró utasítása?</p>
+      <input type="text" id="answerInput" placeholder="Írd be a választ..." />
+      <button onclick="checkAnswer()">Ellenőrzés</button>
+      <p>Pontszám: <span id="score">0</span></p>
+      <p>Jelvények: <span id="badges">0</span> <span id="badges-list"></span></p>
+    </div>
+
+    <div class="minimap">
+      <script>
+        for (let i = 0; i < 30; i++) {
+          document.write(`<div class="minimap-tile${i === 0 ? ' active' : ''}"></div>`);
+        }
+      </script>
+    </div>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
