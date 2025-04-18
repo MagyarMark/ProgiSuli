@@ -19,7 +19,7 @@
       <a href="rolunk.html">Rólunk</a>
       <a href="kapcsolat.html">Kapcsolat</a>
     </nav>
-</header>
+  </header>
 
   <main class="module-flex">
     <section class="module-section">
@@ -52,12 +52,84 @@ else:
       </code></pre>
     </section>
 
-    <section class="quiz-launch">
-      <button class="btn" onclick="toggleQuiz()">
-        🎯 Teszteld a tudásod!
-      </button>
+    <section class="module-section">
+      <h2>Ciklusok</h2>
+      <p>A <code>for</code> ciklussal ismétléseket végezhetünk:</p>
+      <pre><code class="language-python">
+for i in range(5):
+    print("Ismétlés:", i)
+      </code></pre>
     </section>
-    
+
+    <section class="module-section">
+      <h2>Függvények</h2>
+      <p>Függvényekkel újrahasznosítható kódrészeket hozhatunk létre:</p>
+      <pre><code class="language-python">
+def udvozles(nev):
+    print("Helló, " + nev + "!")
+
+udvozles("Anna")
+      </code></pre>
+    </section>
+
+    <section class="module-section">
+      <h2>Listák</h2>
+      <p>A listák több érték tárolására alkalmasak:</p>
+      <pre><code class="language-python">
+gyumolcsok = ["alma", "banán", "cseresznye"]
+print(gyumolcsok[0])  # alma
+      </code></pre>
+    </section>
+
+    <section class="module-section">
+      <h2>Ciklus listával</h2>
+      <p>A listák elemein végigmehetünk <code>for</code> ciklussal:</p>
+      <pre><code class="language-python">
+for gyumolcs in gyumolcsok:
+    print(gyumolcs)
+      </code></pre>
+    </section>
+
+    <section class="module-section">
+      <h2>Szótárak</h2>
+      <p>A szótárak kulcs-érték párokat tárolnak:</p>
+      <pre><code class="language-python">
+diak = {"nev": "Péter", "kor": 16}
+print(diak["nev"])
+      </code></pre>
+    </section>
+
+    <section class="module-section">
+      <h2>Hibakezelés</h2>
+      <p>A <code>try-except</code> segítségével kezelhetjük a hibákat:</p>
+      <pre><code class="language-python">
+try:
+    szam = int(input("Adj meg egy számot: "))
+    print(szam * 2)
+except ValueError:
+    print("Ez nem szám!")
+      </code></pre>
+    </section>
+
+    <section class="module-section">
+      <h2>Osztályok</h2>
+      <p>Az osztályok objektumorientált programozáshoz használhatók:</p>
+      <pre><code class="language-python">
+class Ember:
+    def __init__(self, nev):
+        self.nev = nev
+
+    def koszon(self):
+        print("Szia, " + self.nev + "!")
+
+p = Ember("János")
+p.koszon()
+      </code></pre>
+    </section>
+
+    <section class="quiz-launch">
+      <button class="btn" onclick="toggleQuiz()">🎯 Teszteld a tudásod!</button>
+    </section>
 
     <section id="quizSection" class="quiz" style="display:none;">
       <h3>✅ Kvíz: Mit tanultál?</h3>
@@ -91,19 +163,39 @@ else:
       </div>
     </div>
   </footer>
+
+  <button id="scrollTopBtn" title="Ugrás a tetejére">⬆️</button>
+
   <script>
-    // menu
-    document.getElementById("menuToggle").addEventListener("click", function () {
-    document.getElementById("mainNav").classList.toggle("active");
-  });
+    const scrollBtn = document.getElementById("scrollTopBtn");
+  
+    window.addEventListener("scroll", () => {
+      if (window.scrollY > 300) {
+        scrollBtn.style.display = "block";
+      } else {
+        scrollBtn.style.display = "none";
+      }
+    });
+  
+    scrollBtn.addEventListener("click", () => {
+      window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+      });
+    });
   </script>
+
   <script>
+    // Menü toggle
+    document.getElementById("menuToggle").addEventListener("click", function () {
+      document.getElementById("mainNav").classList.toggle("active");
+    });
+
     function toggleQuiz() {
       const quiz = document.getElementById("quizSection");
       quiz.style.display = (quiz.style.display === "block") ? "none" : "block";
     }
-  </script>
-  <script>
+
     document.getElementById("quizForm").addEventListener("submit", function (e) {
       e.preventDefault();
       const q1 = document.querySelector('input[name="q1"]:checked')?.value;

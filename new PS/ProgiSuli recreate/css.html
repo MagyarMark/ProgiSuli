@@ -115,6 +115,73 @@ a:hover {
       </code></pre>
     </section>
 
+    <section class="module-section">
+      <h2>🔲 CSS Grid alapok</h2>
+      <p>A Grid lehetővé teszi táblázatszerű elrendezések létrehozását.</p>
+      <pre><code class="language-css">
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+}
+.grid-item {
+  background-color: #0af;
+  padding: 20px;
+  color: white;
+  text-align: center;
+}
+      </code></pre>
+
+      <div class="grid-container" style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin-top: 1rem;">
+        <div class="grid-item">1</div>
+        <div class="grid-item">2</div>
+        <div class="grid-item">3</div>
+      </div>
+    </section>
+
+    <section class="module-section">
+      <h2>🎞️ Egyszerű animáció</h2>
+      <p>A CSS animációkkal látványosabbá tehetjük az elemek viselkedését.</p>
+      <pre><code class="language-css">
+@keyframes villogas {
+  0% { opacity: 1; }
+  50% { opacity: 0.5; background-color: green;}
+  100% { opacity: 1; }
+}
+
+.animated-box {
+  width: 100px;
+  height: 100px;
+  background-color: #0af;
+  animation: villogas 2s infinite;
+}
+      </code></pre>
+
+      <div class="animated-box" id="Abox"></div>
+    </section>
+
+    <section class="module-section">
+      <h2>🎨 CSS változók (Custom Properties)</h2>
+      <p>Változók segítségével újrafelhasználható színeket, méreteket hozhatunk létre:</p>
+      <pre><code class="language-css">
+:root {
+  --fo-szin: #0af;
+  --alap-meret: 16px;
+}
+
+.box {
+  background-color: var(--fo-szin);
+  font-size: var(--alap-meret);
+  color: white;
+  padding: 1rem;
+}
+      </code></pre>
+
+      <div class="box" style="background-color: #0af; font-size: 16px; color: white; padding: 1rem; margin-top: 1rem;">
+        Ez egy változóból épített box
+      </div>
+    </section>
+
 
     <section class="quiz-launch">
       <button class="btn" onclick="toggleQuiz()">
@@ -134,6 +201,21 @@ a:hover {
         <label><input type="radio" name="q2" value="a"> align-items: center</label><br/>
         <label><input type="radio" name="q2" value="b"> justify-content: center</label><br/>
         <label><input type="radio" name="q2" value="c"> text-align: center</label><br/>
+
+        <p>3. Melyik a helyes Flexbox tulajdonság a függőleges igazításhoz?</p>
+        <label><input type="radio" name="q3" value="a"> justify-content</label><br/>
+        <label><input type="radio" name="q3" value="b"> align-items</label><br/>
+        <label><input type="radio" name="q3" value="c"> text-align</label><br/>
+
+        <p>4. Melyik kódrészlet hoz létre 3 azonos szélességű oszlopot Grid-del?</p>
+        <label><input type="radio" name="q4" value="a"> grid-template-columns: 1fr 2fr;</label><br/>
+        <label><input type="radio" name="q4" value="b"> grid-template-columns: repeat(3, 1fr);</label><br/>
+        <label><input type="radio" name="q4" value="c"> display: flex;</label><br/>
+
+        <p>5. Melyik CSS kulcsszóval hozhatsz létre változót?</p>
+        <label><input type="radio" name="q5" value="a"> $változó</label><br/>
+        <label><input type="radio" name="q5" value="b"> var()</label><br/>
+        <label><input type="radio" name="q5" value="c"> --változó</label><br/>
 
         <button class="btn" type="submit">Ellenőrzés</button>
         <p id="quizResult"></p>
@@ -155,6 +237,27 @@ a:hover {
     </div>
   </footer>
 
+  <button id="scrollTopBtn" title="Ugrás a tetejére">⬆️</button>
+
+  <script>
+    const scrollBtn = document.getElementById("scrollTopBtn");
+  
+    window.addEventListener("scroll", () => {
+      if (window.scrollY > 300) {
+        scrollBtn.style.display = "block";
+      } else {
+        scrollBtn.style.display = "none";
+      }
+    });
+  
+    scrollBtn.addEventListener("click", () => {
+      window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+      });
+    });
+  </script>
+
   <script>
     // menu
     document.getElementById("menuToggle").addEventListener("click", function () {
@@ -169,16 +272,29 @@ a:hover {
   </script>
   <script>
     document.getElementById("quizForm").addEventListener("submit", function (e) {
-      e.preventDefault();
-      const q1 = document.querySelector('input[name="q1"]:checked')?.value;
-      const q2 = document.querySelector('input[name="q2"]:checked')?.value;
-      const result = document.getElementById("quizResult");
-      if (q1 === "b" && q2 === "b") {
-        result.textContent = "🎉 Szép munka! Mindkét válasz helyes!"; 
-      } else {
-        result.textContent = "❌ Nem minden válasz helyes. Próbáld újra!"; 
-      }
-    });
+    e.preventDefault();
+    const q1 = document.querySelector('input[name="q1"]:checked')?.value;
+    const q2 = document.querySelector('input[name="q2"]:checked')?.value;
+    const q3 = document.querySelector('input[name="q3"]:checked')?.value;
+    const q4 = document.querySelector('input[name="q4"]:checked')?.value;
+    const q5 = document.querySelector('input[name="q5"]:checked')?.value;
+    const result = document.getElementById("quizResult");
+
+    let correct = 0;
+    if (q1 === "b") correct++;
+    if (q2 === "b") correct++;
+    if (q3 === "b") correct++;
+    if (q4 === "b") correct++;
+    if (q5 === "c") correct++;
+
+    if (correct === 5) {
+      result.textContent = "🏆 Tökéletes! 5/5 helyes válasz! Szuper munka!";
+    } else if (correct >= 3) {
+      result.textContent = `👍 Szép munka! ${correct}/5 jó válasz. Próbáld meg újra a maximális eredményhez!`;
+    } else {
+      result.textContent = `❗ Csak ${correct}/5 helyes. Nézd át újra a tananyagot és próbáld meg ismét!`;
+    }
+  });
   </script>
 </body>
 </html>
