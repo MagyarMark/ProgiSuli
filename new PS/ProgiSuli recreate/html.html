@@ -100,6 +100,19 @@
       </form>
     </section>
 
+    <section class="module-section">
+      <h2>💻 Interaktív HTML szerkesztő</h2>
+      <p>Próbáld ki a HTML-t élőben! Írj be HTML kódot a bal oldali mezőbe, és az eredmény azonnal megjelenik jobb oldalt.</p>
+      
+      <div class="editor-container">
+        <textarea id="htmlInput" placeholder="Írj ide HTML kódot...">
+<h1>Üdv a ProgiSuliban!</h1>
+<p>Ez egy élő HTML szerkesztő.</p>
+        </textarea>
+        <iframe id="htmlPreview"></iframe>
+      </div>
+    </section>
+
 
     <section class="quiz-launch">
       <button class="btn" onclick="toggleQuiz()">
@@ -130,14 +143,29 @@
     <div class="footer-content">
       <div class="footer-left">
         <h3>ProgiSuli</h3>
-        <p>&copy; 2025 Minden jog fenntartva.</p>
+        <p>&copy; 2025 ProgiSuli. Minden jog fenntartva.</p>
       </div>
       <div class="footer-links">
         <a href="index.html">Kezdőlap</a>
+        <a href="index.html#courses">Tananyag</a>
         <a href="kapcsolat.html">Kapcsolat</a>
       </div>
     </div>
   </footer>
+
+  <script>
+    const input = document.getElementById("htmlInput");
+    const preview = document.getElementById("htmlPreview");
+
+    function updatePreview() {
+      const content = input.value;
+      preview.srcdoc = content;
+    }
+
+    input.addEventListener("input", updatePreview);
+    updatePreview(); // kezdeti betöltés
+  </script>
+
 
   <script>
     // menu

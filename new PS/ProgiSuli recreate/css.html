@@ -69,6 +69,53 @@ h1 {
       </code></pre>
     </section>
 
+    <section class="module-section">
+      <h2>🔄 Állapotok és pszeudo-osztályok</h2>
+      <p>Stílusozhatunk az elem állapota szerint is:</p>
+      <pre><code class="language-css">
+a:hover {
+  color: #0af;
+  text-decoration: underline;
+}
+      </code></pre>
+      <p>Ez akkor érvényesül, amikor az egérrel fölé visszük a kurzort.</p>
+    </section>
+
+    <section class="module-section">
+      <h2>🧱 Osztályok és azonosítók használata</h2>
+      <p>Használjunk <code>.</code> osztályokhoz és <code>#</code> azonosítókhoz:</p>
+      <pre><code class="language-css">
+.button {
+  padding: 10px 20px;
+  background-color: #0af;
+  color: white;
+  border-radius: 5px;
+}
+
+#kiemelt {
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+      </code></pre>
+    </section>
+
+    <section class="module-section">
+      <h2>📱 Reszponzív design</h2>
+      <p>A CSS segítségével mobilra is optimalizálhatjuk az oldalt:</p>
+      <pre><code class="language-css">
+@media (max-width: 768px) {
+  nav {
+    flex-direction: column;
+  }
+
+  .module-section {
+    padding: 10px;
+  }
+}
+      </code></pre>
+    </section>
+
+
     <section class="quiz-launch">
       <button class="btn" onclick="toggleQuiz()">
         🎯 Teszteld a tudásod!
@@ -98,10 +145,11 @@ h1 {
     <div class="footer-content">
       <div class="footer-left">
         <h3>ProgiSuli</h3>
-        <p>&copy; 2025 Minden jog fenntartva.</p>
+        <p>&copy; 2025 ProgiSuli. Minden jog fenntartva.</p>
       </div>
       <div class="footer-links">
         <a href="index.html">Kezdőlap</a>
+        <a href="index.html#courses">Tananyag</a>
         <a href="kapcsolat.html">Kapcsolat</a>
       </div>
     </div>
