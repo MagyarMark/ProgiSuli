@@ -67,12 +67,143 @@ public MyForm()
         <li><strong>Button</strong> – Gomb</li>
         <li><strong>CheckBox</strong>, <strong>RadioButton</strong> – Beállítások</li>
         <li><strong>PictureBox</strong> – Képmegjelenítés</li>
+        <li><strong>ListBox</strong>, <strong>ComboBox</strong> – Listaelemek</li>
+        <li><strong>DataGridView</strong> – Táblázatos megjelenítés</li>
+        <li><strong>MenuStrip</strong> – Menü létrehozás</li>
+        <li><strong>ToolStrip</strong> – Eszköztár létrehozás</li>
+        <li><strong>StatusStrip</strong> – Állapotsor létrehozás</li>
+        <li><strong>TabControl</strong> – Tabok létrehozás</li>
+        <li><strong>GroupBox</strong> – Csoportosítás</li>
+        <li><strong>Panel</strong> – Konténer elem</li>
+        <li><strong>ProgressBar</strong> – Haladásjelző</li>
+        <li><strong>TrackBar</strong> – Csúszka</li>
+        <li><strong>ToolTip</strong> – Súgó üzenetek</li>
+        <li><strong>Form</strong> – Ablak létrehozás</li>
+        <li><strong>PictureBox</strong> – Kép megjelenítés</li>
+        <li><strong>WebBrowser</strong> – Beágyazott böngésző</li>
+        <li><strong>RichTextBox</strong> – Formázott szövegbevitel</li>
       </ul>
+    </section>
+
+    <section class="module-section">
+      <h2>📦 Könyvtárak és névterek</h2>
+      <p>A Windows Forms alkalmazásokhoz szükséges könyvtárak és névterek:</p>
+      <pre><code class="language-csharp">
+using System;
+using System.Windows.Forms;
+using System.Drawing;
+using System.IO;
+using System.Net;
+using System.Threading.Tasks;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading;
+using System.Diagnostics;
+using System.Reflection;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing.Drawing2D;
+using System.Windows.Forms.DataVisualization.Charting;
+using System.Windows.Forms.VisualStyles;
+      </code></pre>
+    </section>
+
+    <section class="module-section">
+      <p>Az alábbi könyvtárakat a NuGet csomagkezelőn keresztül telepíthetjük:</p>
+      <ul>
+        <li><strong>Newtonsoft.Json</strong> – JSON feldolgozás</li>
+        <li><strong>System.Net.Http</strong> – HTTP kérések küldése</li>
+        <li><strong>System.Drawing.Common</strong> – Képkezelés</li>
+        <li><strong>System.Windows.Forms.DataVisualization</strong> – Grafikonok és diagramok készítése</li>
+        <li><strong>System.Windows.Forms.VisualStyles</strong> – Windows stílusok használata</li>
+        <li><strong>System.ComponentModel.DataAnnotations</strong> – Adatellenőrzés</li>
+        <li><strong>System.Data.SqlClient</strong> – SQL adatbázisok kezelése</li>
+        <li><strong>System.Xml</strong> – XML fájlok kezelése</li>
+        <li><strong>System.IO.Compression</strong> – Fájlok tömörítése és kicsomagolása</li>
+        <li><strong>System.Threading.Tasks</strong> – Aszinkron programozás</li>
+        <li><strong>System.Diagnostics</strong> – Hibakeresés és teljesítményfigyelés</li>
+        <li><strong>System.Reflection</strong> – Típusok és metódusok vizsgálata futásidőben</li>
+        <li><strong>System.Collections.Generic</strong> – Generikus gyűjtemények</li>
+        <li><strong>System.Linq</strong> – LINQ lekérdezések</li>
+        <li><strong>System.Text</strong> – Szövegkezelés</li>
+        <li><strong>System.Threading</strong> – Szálkezelés</li>
+        <li><strong>System.Windows.Forms.DataVisualization.Charting</strong> – Grafikonok és diagramok készítése</li>
+        <li><strong>System.ComponentModel</strong> – Komponensmodellek és események kezelése</li> 
+        <li><strong>System.Data</strong> – Adatkezelés és adatbázisok</li>
+        <li><strong>System.Drawing</strong> – Grafika és képek kezelése</li>
+        <li><strong>System.Windows.Forms</strong> – Windows Forms alkalmazások készítése</li>
+      </ul>
+    </section>
+
+    <section class="module-section">
+      <h2>🎮 Események és vezérlők</h2>
+      <p>Ismerkedj meg a gombok, szövegmezők és egyéb vezérlők eseményeivel:</p>
+      <pre><code class="language-csharp">
+public MyForm()
+{
+    // Label létrehozása
+    Label lbl = new Label();
+    lbl.Text = "Kattints a gombra!";
+    lbl.Location = new Point(50, 50);
+    Controls.Add(lbl);
+
+    // Button létrehozása
+    Button btn = new Button();
+    btn.Text = "Kattints rám!";
+    btn.Location = new Point(50, 100);
+    btn.Click += (s, e) => lbl.Text = "A gombot megnyomták!";
+    Controls.Add(btn);
+}
+      </code></pre>
+      <p><em>Futtatáskor: amikor a gombra kattintasz, a címke szövege változik.</em></p>
+    </section>
+
+    <!-- Egyéb vezérlők -->
+    <section class="module-section">
+      <h2>🔘 Egyéb vezérlők</h2>
+      <p>Most nézzük meg, hogyan dolgozhatunk más vezérlőkkel, mint a <strong>CheckBox</strong>, <strong>RadioButton</strong>, vagy <strong>TextBox</strong>:</p>
+      <pre><code class="language-csharp">
+public MyForm()
+{
+    // CheckBox
+    CheckBox chk = new CheckBox();
+    chk.Text = "Elfogadom a feltételeket";
+    chk.Location = new Point(50, 150);
+    Controls.Add(chk);
+
+    // RadioButton
+    RadioButton rbtn = new RadioButton();
+    rbtn.Text = "Férfi";
+    rbtn.Location = new Point(50, 200);
+    Controls.Add(rbtn);
+}
+      </code></pre>
+      <p><em>Futtatáskor: a felhasználó kiválaszthatja, hogy elfogadja-e a feltételeket, vagy hogy férfi vagy női opciót választ-e.</em></p>
+    </section>
+
+    <!-- Képkezelés: PictureBox -->
+    <section class="module-section">
+      <h2>🖼️ Képkezelés: PictureBox</h2>
+      <p>Kép megjelenítése egy <strong>PictureBox</strong> vezérlőn keresztül:</p>
+      <pre><code class="language-csharp">
+public MyForm()
+{
+    PictureBox picBox = new PictureBox();
+    picBox.Image = Image.FromFile("path_to_image.jpg");
+    picBox.Location = new Point(50, 250);
+    picBox.SizeMode = PictureBoxSizeMode.StretchImage;
+    picBox.Size = new Size(200, 200);
+    Controls.Add(picBox);
+}
+      </code></pre>
+      <p><em>Futtatáskor: egy kép jelenik meg az alkalmazásban.</em></p>
     </section>
 
     <!-- Kvíz gomb -->
     <section class="quiz-launch">
       <button class="btn" onclick="toggleQuiz()">🎯 Teszteld a tudásod!</button>
+      <button class="btn" onclick="toggleQuiz2()">🎯 Kvíz – Haladó</button>
     </section>
 
     <!-- Kvíz szekció -->
@@ -95,6 +226,24 @@ public MyForm()
     </section>
   </main>
 
+  <section id="quizSection2" class="quiz" style="display:none;">
+    <h3>✅ Kvíz: Mit tanultál?</h3>
+    <form id="quizForm2">
+      <p>3. Melyik vezérlőt használjuk szöveg megjelenítésére?</p>
+      <label><input type="radio" name="q3" value="a"> Label</label><br>
+      <label><input type="radio" name="q3" value="b"> Button</label><br>
+      <label><input type="radio" name="q3" value="c"> TextBox</label><br>
+
+      <p>4. Melyik vezérlőt használjuk képek megjelenítésére?</p>
+      <label><input type="radio" name="q4" value="a"> TextBox</label><br>
+      <label><input type="radio" name="q4" value="b"> PictureBox</label><br>
+      <label><input type="radio" name="q4" value="c"> ListBox</label><br>
+
+      <button class="btn" type="submit">Ellenőrzés</button>
+      <p id="quizResult2"></p>
+    </form>
+  </section>
+
   <footer class="footer">
     <div class="footer-content">
       <div class="footer-left">
@@ -108,6 +257,27 @@ public MyForm()
       </div>
     </div>
   </footer>
+
+  <button id="scrollTopBtn" title="Ugrás a tetejére">⬆️</button>
+
+  <script>
+    const scrollBtn = document.getElementById("scrollTopBtn");
+  
+    window.addEventListener("scroll", () => {
+      if (window.scrollY > 300) {
+        scrollBtn.style.display = "block";
+      } else {
+        scrollBtn.style.display = "none";
+      }
+    });
+  
+    scrollBtn.addEventListener("click", () => {
+      window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+      });
+    });
+  </script>
 
   <script>
     // menu
@@ -134,5 +304,29 @@ public MyForm()
       }
     });
   </script>
+
+<script>
+  // Kvíz kiértékelés – Haladó
+  function toggleQuiz2() {
+    const quiz = document.getElementById("quizSection2");
+    quiz.style.display = quiz.style.display === "block" ? "none" : "block";
+  }
+
+  document.getElementById("quizForm2").addEventListener("submit", function(e) {
+    e.preventDefault();
+    const q3 = document.querySelector('input[name="q3"]:checked')?.value;
+    const q4 = document.querySelector('input[name="q4"]:checked')?.value;
+    const result2 = document.getElementById("quizResult2");
+    let correct = 0;
+    if (q3 === "a") correct++;
+    if (q4 === "b") correct++;
+
+    if (correct === 2) {
+      result2.textContent = "🎉 Mindkét válasz helyes!";
+    } else {
+      result2.textContent = `❗ ${correct}/2 helyes. Próbáld újra!`;
+    }
+  });
+</script>
 </body>
 </html>

@@ -16,51 +16,58 @@
       <a href="rolunk.html">Rólunk</a>
       <a href="kapcsolat.html">Kapcsolat</a>
     </nav>
-</header>
+  </header>
 
   <main class="about-page">
     <section class="about-hero">
       <h2>Üdvözlünk a ProgiSuli világában!</h2>
-      <p>Mi egy lelkes fejlesztői csapat vagyunk, akik hisznek abban, hogy a programozás tanulása lehet izgalmas, játékos és könnyen hozzáférhető bárki számára.</p>
+      <p>A <strong>ProgiSuli</strong> egy modern, magyar nyelvű oktatóplatform, amely segít elsajátítani a programozás alapjait HTML, CSS, JavaScript, Python és C# nyelveken keresztül. Célunk, hogy a tanulás ne unalmas kötelesség, hanem élvezetes, játékos és motiváló folyamat legyen!</p>
     </section>
 
     <section class="about-mission">
       <h3>🎯 Küldetésünk</h3>
       <p>
-        Az a célunk, hogy modern és barátságos felületen keresztül tanítsuk meg a HTML, CSS, JavaScript, Python és egyéb technológiák alapjait.  
-        A <strong>ProgiSuli</strong> nem csak egy oktatási platform – ez egy közösség, ahol tanulhatsz, fejlődhetsz és gyakorolhatsz valódi visszajelzésekkel.
+        Hiszünk abban, hogy a programozást mindenki képes megtanulni – a megfelelő eszközökkel és támogatással. Éppen ezért építjük fel a ProgiSuli-t interaktív modulokkal, játékos feladatokkal, vizuális példákkal és visszajelzési rendszerrel.
+        <br><br>
+        A tananyagokat úgy készítjük, hogy akár teljesen kezdőként is bátran belevághass – és ha elakadsz, a rendszer segít visszaterelni a helyes útra.
       </p>
     </section>
 
     <section class="about-team">
-      <h3>🧑‍💻 A csapat</h3>
+      <h3>🧑‍💻 A fejlesztés mögött</h3>
       <div class="team-grid">
         <div class="team-member">
-            <img src="https://i.pravatar.cc/150?img=3" alt="Fejlesztő" />
+          <img src="https://i.pravatar.cc/150?img=3" alt="Fejlesztő" />
           <h4>Márk</h4>
-          <p>Alapító, Frontend fejlesztő</p>
+          <p>Alapító, Frontend & Tananyagfelelős</p>
         </div>
         <div class="team-member">
-            <img src="https://i.pravatar.cc/150?img=3" alt="Fejlesztő" />
-            <h4>Márk</h4>
-            <p>Design, UX/UI</p>
+          <img src="https://i.pravatar.cc/150?img=7" alt="UX/UI design" />
+          <h4>Márk</h4>
+          <p>UX/UI Design, Stílus és élmény</p>
         </div>
         <div class="team-member">
-            <img src="https://i.pravatar.cc/150?img=3" alt="Fejlesztő" />
+          <img src="https://i.pravatar.cc/150?img=8" alt="Backend fejlesztő" />
           <h4>Márk</h4>
-          <p>Backend / Tananyag író</p>
+          <p>Logika, C# modul, Tesztkvízek</p>
         </div>
       </div>
     </section>
 
     <section class="about-values">
-      <h3>💡 Értékeink</h3>
+      <h3>💡 Alapelveink</h3>
       <ul>
-        <li>🔄 Gyakorlatra épülő tanulás</li>
-        <li>🌙 Dark/Light mód támogatás</li>
-        <li>📊 Haladás követése</li>
-        <li>🤝 Közösségi támogatás</li>
+        <li>🎮 Játékosított tanulás (pl. <em>Dungeon of Code</em>)</li>
+        <li>🧠 Moduláris tananyagok (HTML, CSS, Python, stb.)</li>
+        <li>🌑 Dark mód és reszponzív design</li>
+        <li>📚 Egyszerű, érthető példák magyar nyelven</li>
+        <li>🔗 Kapcsolat a <strong>ProgiSuli</strong> közösséggel</li>
       </ul>
+    </section>
+
+    <section class="about-future">
+      <h3>🚀 Merre tartunk?</h3>
+      <p>Folyamatosan bővítjük a tananyagokat, új funkciókat vezetünk be (mint például Dungeon of Code), és célunk egy teljesen interaktív tanulási ökoszisztéma kialakítása – mobilbarát felülettel és akár élő kihívásokkal is.</p>
     </section>
   </main>
 
@@ -78,11 +85,31 @@
     </div>
   </footer>
   
+  <button id="scrollTopBtn" title="Ugrás a tetejére">⬆️</button>
+
   <script>
-    // menu
+    const scrollBtn = document.getElementById("scrollTopBtn");
+  
+    window.addEventListener("scroll", () => {
+      if (window.scrollY > 300) {
+        scrollBtn.style.display = "block";
+      } else {
+        scrollBtn.style.display = "none";
+      }
+    });
+  
+    scrollBtn.addEventListener("click", () => {
+      window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+      });
+    });
+  </script>
+
+  <script>
     document.getElementById("menuToggle").addEventListener("click", function () {
-    document.getElementById("mainNav").classList.toggle("active");
-  });
+      document.getElementById("mainNav").classList.toggle("active");
+    });
   </script>
 </body>
 </html>
