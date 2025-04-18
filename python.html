@@ -1,105 +1,213 @@
 <!DOCTYPE html>
 <html lang="hu">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="js/fgv.js">
-    <script src="js/fgv.js"></script>
-    <link rel="icon" type="image/x-icon" href="png/PS.png">
-    <title>ProgiSuli - Python</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/x-icon" href="png/PS.png">
+  <title>Python Modul – ProgiSuli</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://cdn.jsdelivr.net/npm/prismjs/themes/prism-tomorrow.css" rel="stylesheet" />
+  <script src="https://cdn.jsdelivr.net/npm/prismjs/prism.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/prismjs/components/prism-python.min.js"></script>
 </head>
-<body onload="menubar()">
-    <nav>
-        <p style="display: inline-block">
-            <img src="png/PS.png" width="32" height="32" class="mobile-only">
-        </p>
-        <button class="menu-toggle" aria-label="Toggle navigation menu" style="float: right;">☰</button>
-        <ul class="menu">
-            <li><a href="python.html">Python</a></li>
-            <li><a href="csharp.html">C#</a></li>
-            <li><a href="index.html"><img src="png/PS.png" width="32" height="32" alt="Home"></a></li>
-            <li><a href="web.html">Web</a></li>
-            <li><a href="extra.html">Extra</a></li>
-        </ul>
+<body>
+  <header>
+    <h1>🐍 Python Modul</h1>
+    <button id="menuToggle" aria-label="Menü megnyitása">☰</button>
+    <nav id="mainNav">
+      <a href="index.html">Kezdőlap</a>
+      <a href="index.html#courses">Tananyag</a>
+      <a href="rolunk.html">Rólunk</a>
+      <a href="kapcsolat.html">Kapcsolat</a>
     </nav>
-<hr>
-    <div class="header">
-        <h1>Python</h1>
-    </div>
+  </header>
 
-    <div class="row">
-        <div class="column1">
-            <h1>Python Alapok</h1>
-            <hr>
-            <p>A Python egy magas szintű, általános célú programozási nyelv, amelyet könnyű olvasni és írni. A Python egyszerű szintaxisa lehetővé teszi a gyors fejlesztést és a kód könnyű karbantartását.</p>
-        </div>
-        <div class="column1">
-            <h1>Python Kezdő Szint</h1>
-            <hr>
-            <p>A kezdő szintű Python programozás alapvető szintaxis és egyszerű programok írását foglalja magában. Például egy egyszerű "Hello, World!" program:</p>
-            <pre class="code">
-                <code>
-print("Hello, World!")
-                </code>
-            </pre>
-            <p>A fenti kód egy egyszerű Python programot mutat be, amely kiírja a "Hello, World!" üzenetet a konzolra.</p>
-        </div>
-    </div>
-    
-    <div class="row">
-        <div class="column1">
-            <h1>Python Haladó Szint</h1>
-            <hr>
-            <p>A haladó szintű Python programozás magában foglalja az objektumorientált programozást, modulok és csomagok használatát, valamint a kivételkezelést. Például egy egyszerű osztály definiálása:</p>
-            <pre class="code">
-                <code class="python">
-class Szemely:
-    def __init__(self, nev, kor):
+  <main class="module-flex">
+    <section class="module-section">
+      <h2>Kiírás</h2>
+      <p>A <code>print()</code> függvénnyel írhatunk ki szöveget a konzolra.</p>
+      <pre><code class="language-python">
+print("Helló, világ!")
+      </code></pre>
+    </section>
+
+    <section class="module-section">
+      <h2>Változók</h2>
+      <p>Változók létrehozása egyszerűen történik:</p>
+      <pre><code class="language-python">
+neve = "Anna"
+eletkor = 25
+print(neve, eletkor)
+      </code></pre>
+    </section>
+
+    <section class="module-section">
+      <h2>Elágazások</h2>
+      <p>Az <code>if</code> szerkezet:</p>
+      <pre><code class="language-python">
+x = 10
+if x > 5:
+    print("Nagyobb mint 5")
+else:
+    print("Nem nagyobb")
+      </code></pre>
+    </section>
+
+    <section class="module-section">
+      <h2>Ciklusok</h2>
+      <p>A <code>for</code> ciklussal ismétléseket végezhetünk:</p>
+      <pre><code class="language-python">
+for i in range(5):
+    print("Ismétlés:", i)
+      </code></pre>
+    </section>
+
+    <section class="module-section">
+      <h2>Függvények</h2>
+      <p>Függvényekkel újrahasznosítható kódrészeket hozhatunk létre:</p>
+      <pre><code class="language-python">
+def udvozles(nev):
+    print("Helló, " + nev + "!")
+
+udvozles("Anna")
+      </code></pre>
+    </section>
+
+    <section class="module-section">
+      <h2>Listák</h2>
+      <p>A listák több érték tárolására alkalmasak:</p>
+      <pre><code class="language-python">
+gyumolcsok = ["alma", "banán", "cseresznye"]
+print(gyumolcsok[0])  # alma
+      </code></pre>
+    </section>
+
+    <section class="module-section">
+      <h2>Ciklus listával</h2>
+      <p>A listák elemein végigmehetünk <code>for</code> ciklussal:</p>
+      <pre><code class="language-python">
+for gyumolcs in gyumolcsok:
+    print(gyumolcs)
+      </code></pre>
+    </section>
+
+    <section class="module-section">
+      <h2>Szótárak</h2>
+      <p>A szótárak kulcs-érték párokat tárolnak:</p>
+      <pre><code class="language-python">
+diak = {"nev": "Péter", "kor": 16}
+print(diak["nev"])
+      </code></pre>
+    </section>
+
+    <section class="module-section">
+      <h2>Hibakezelés</h2>
+      <p>A <code>try-except</code> segítségével kezelhetjük a hibákat:</p>
+      <pre><code class="language-python">
+try:
+    szam = int(input("Adj meg egy számot: "))
+    print(szam * 2)
+except ValueError:
+    print("Ez nem szám!")
+      </code></pre>
+    </section>
+
+    <section class="module-section">
+      <h2>Osztályok</h2>
+      <p>Az osztályok objektumorientált programozáshoz használhatók:</p>
+      <pre><code class="language-python">
+class Ember:
+    def __init__(self, nev):
         self.nev = nev
-        self.kor = kor
-    
-def bemutatkozas(self):
-    print(f"Szia, a nevem {self.nev})
-    print(f"és {self.kor} éves vagyok.")
-    
-szemely = Szemely("Anna", 25)
-szemely.bemutatkozas()
-                </code>
-            </pre>
-            <p>A fenti kód egy egyszerű osztályt definiál, amely egy személy nevét és korát tárolja, és egy bemutatkozó üzenetet ír ki.</p>
-        </div>
-        <div class="column1">
-            <h1>Python Profi Szint</h1>
-            <hr>
-            <p>A profi szintű Python programozás magában foglalja a fejlett technikákat, mint például a dekorátorok, generátorok, aszinkron programozás és a különböző Python könyvtárak és keretrendszerek használata. Például egy egyszerű dekorátor:</p>
-            <pre class="code">
-                <code class="python">
-def my_decorator(func):
-    def wrapper():
-        print("Valami történik a függvény előtt.")
-        func()
-        print("Valami történik a függvény után.")
-    return wrapper
-    
-@my_decorator
-def mondj_valamit():
-    print("Hello!")
-    
-mondj_valamit()
-                </code>
-            </pre>
-            <p>A fenti kód egy egyszerű dekorátort mutat be, amely egy függvény előtt és után hajt végre műveleteket.</p>
-        </div>
+
+    def koszon(self):
+        print("Szia, " + self.nev + "!")
+
+p = Ember("János")
+p.koszon()
+      </code></pre>
+    </section>
+
+    <section class="quiz-launch">
+      <button class="btn" onclick="toggleQuiz()">🎯 Teszteld a tudásod!</button>
+    </section>
+
+    <section id="quizSection" class="quiz" style="display:none;">
+      <h3>✅ Kvíz: Mit tanultál?</h3>
+      <form id="quizForm">
+        <p>1. Mit csinál a print() függvény?</p>
+        <label><input type="radio" name="q1" value="a"> Számol</label><br>
+        <label><input type="radio" name="q1" value="b"> Kiír szöveget</label><br>
+        <label><input type="radio" name="q1" value="c"> Ciklust indít</label><br>
+
+        <p>2. Mi történik, ha x=3 az alábbi kódban?<br><code>if x > 5: print("Nagyobb") else: print("Nem nagyobb")</code></p>
+        <label><input type="radio" name="q2" value="a"> "Nagyobb"</label><br>
+        <label><input type="radio" name="q2" value="b"> "Nem nagyobb"</label><br>
+        <label><input type="radio" name="q2" value="c"> Hiba</label><br>
+
+        <button class="btn" type="submit">Ellenőrzés</button>
+        <p id="quizResult"></p>
+      </form>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-content">
+      <div class="footer-left">
+        <h3>ProgiSuli</h3>
+        <p>&copy; 2025 ProgiSuli. Minden jog fenntartva.</p>
+      </div>
+      <div class="footer-links">
+        <a href="index.html">Kezdőlap</a>
+        <a href="index.html#courses">Tananyag</a>
+        <a href="kapcsolat.html">Kapcsolat</a>
+      </div>
     </div>
+  </footer>
 
-<hr>
+  <button id="scrollTopBtn" title="Ugrás a tetejére">⬆️</button>
 
-    <div class="footer">
-        <div class="code">
-            <h1><a href="index.html">Vissza a főoldalra</a></h1>
-        </div>
-    </div>
+  <script>
+    const scrollBtn = document.getElementById("scrollTopBtn");
+  
+    window.addEventListener("scroll", () => {
+      if (window.scrollY > 300) {
+        scrollBtn.style.display = "block";
+      } else {
+        scrollBtn.style.display = "none";
+      }
+    });
+  
+    scrollBtn.addEventListener("click", () => {
+      window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+      });
+    });
+  </script>
 
+  <script>
+    // Menü toggle
+    document.getElementById("menuToggle").addEventListener("click", function () {
+      document.getElementById("mainNav").classList.toggle("active");
+    });
+
+    function toggleQuiz() {
+      const quiz = document.getElementById("quizSection");
+      quiz.style.display = (quiz.style.display === "block") ? "none" : "block";
+    }
+
+    document.getElementById("quizForm").addEventListener("submit", function (e) {
+      e.preventDefault();
+      const q1 = document.querySelector('input[name="q1"]:checked')?.value;
+      const q2 = document.querySelector('input[name="q2"]:checked')?.value;
+      const result = document.getElementById("quizResult");
+      if (q1 === "b" && q2 === "b") {
+        result.textContent = "🎉 Ügyes vagy! Mindkét válasz helyes!";
+      } else {
+        result.textContent = "❌ Nem minden válasz helyes. Próbáld újra!";
+      }
+    });
+  </script>
 </body>
 </html>
