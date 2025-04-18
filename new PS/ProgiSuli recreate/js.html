@@ -63,6 +63,41 @@ for (let i = 0; i < 5; i++) {
       </code></pre>
     </section>
 
+    <section class="module-section">
+      <h2>🧰 Függvények</h2>
+      <p>Függvényt a <code>function</code> kulcsszóval hozunk létre:</p>
+      <pre><code class="language-javascript">
+function udvozles(nev) {
+  return "Helló, " + nev + "!";
+}
+console.log(udvozles("Anna"));
+      </code></pre>
+    </section>
+
+    <section class="module-section">
+      <h2>📦 Tömbök</h2>
+      <p>Tömb (array) létrehozása és bejárása:</p>
+      <pre><code class="language-javascript">
+let gyumolcsok = ["alma", "banán", "szőlő"];
+for (let gy of gyumolcsok) {
+  console.log(gy);
+}
+      </code></pre>
+    </section>
+
+    <section class="module-section">
+      <h2>📘 Objektumok</h2>
+      <p>Objektum létrehozása és kulcs-érték párok használata:</p>
+      <pre><code class="language-javascript">
+let diak = {
+  nev: "Anna",
+  eletkor: 16,
+  tantargy: "informatika"
+};
+console.log(diak.nev);
+      </code></pre>
+    </section>
+
     <section class="quiz-launch">
         <button class="btn" onclick="toggleQuiz()">
           🎯 Teszteld a tudásod!
@@ -88,6 +123,8 @@ for (let i = 0; i < 5; i++) {
     </section>
   </main>
 
+<button id="scrollTopBtn" title="Ugrás a tetejére">⬆️</button>
+
   <footer class="footer">
     <div class="footer-content">
       <div class="footer-left">
@@ -103,8 +140,27 @@ for (let i = 0; i < 5; i++) {
   </footer>
 
   <script>
+    const scrollBtn = document.getElementById("scrollTopBtn");
+  
+    window.addEventListener("scroll", () => {
+      if (window.scrollY > 300) {
+        scrollBtn.style.display = "block";
+      } else {
+        scrollBtn.style.display = "none";
+      }
+    });
+  
+    scrollBtn.addEventListener("click", () => {
+      window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+      });
+    });
+  </script>
+
+  <script>
     // menu
-    document.getElementById("menuToggle").addEventListener("click", function () {
+    document.getElementById("menuToggle").addEventListener("click", function () { 
     document.getElementById("mainNav").classList.toggle("active");
   });
   </script>
