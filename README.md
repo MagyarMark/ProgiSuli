@@ -1,24 +1,53 @@
-# ProgiSuli
+# ProgiSuli 🎓💻
 
-Ez a projekt a középiskolai programozási tananyagok gyakorlásához készült. 
-Az oldal különböző programozási nyelveket és technológiákat mutat be, mint például Python, C#, HTML és CSS ÉS JS.
+**ProgiSuli** egy magyar nyelvű, interaktív tanulóplatform kezdő programozóknak. Célunk, hogy szórakoztató és játékos formában tanítsuk meg az alapvető programozási nyelveket, mint a **HTML**, **CSS** és **Python**.  
+A felület webalapú, modern és könnyen kezelhető, így akár teljesen kezdők is bátran belevághatnak!
 
-## Elemek
+## 🔥 Fő funkciók
 
-### index.html
+- ✅ HTML, CSS és Python modulok
+- 🎮 Játékosított felület (pl. Dungeon of Code)
+- 📚 Fejezetekre bontott tananyag, lapozható leckék
+- 🧠 Tudáspróbák, kvízek minden modul után
+- 🏆 Jelvények és pontgyűjtő rendszer
+- 📊 Haladáskövetés és eredmény mentés
+- 🌙 Sötét, kékes témájú, letisztult dizájn
+- 🎥 Rövid animációk, vizuális példák a könnyebb megértéshez
+- 🗺️ Minimaptámogatás játékmódban
 
-Ez a főoldal, amely bemutatja a különböző programozási nyelveket és technológiákat. 
-Az oldal tartalmaz linkeket a Python, C# és Web (HTML és CSS és JS) oldalakra.
+## 🖥️ Elérhető modulok
 
-### style.css
+| Modul | Leírás |
+|-------|--------|
+| `HTML` | Weboldalak alapjai, tagek, struktúra |
+| `CSS`  | Stílusozás, színek, betűk, animációk |
+| `Python` | Egyszerű szintaxis, alap algoritmusok, gyakorlati példák |
+| `C# Console App`     | Konzolos alkalmazások készítése, változók, ciklusok, függvények |
+| `C# Windows Forms`   | Egérvezérelt alkalmazások, eseménykezelés, grafikus vezérlők használata |
 
-Ez a stíluslap határozza meg az oldal megjelenését. 
-Tartalmazza a különböző elemek stílusait, mint például a háttérszínek, betűtípusok, animációk és elrendezések.
+## 🕹️ Dungeon of Code
 
-## Képek
+Egy különleges kalandjáték, ahol programozási kihívásokon keresztül haladsz egy 5x5-ös pályán.  
+Minden szobában egy kérdés vár, és a jó válaszokkal badge-eket és pontokat szerezhetsz.  
+2 hibás válasz után gyakorlási lehetőséget kapsz a **ProgiSuli** tananyagban.
 
-A `png` mappában van minden kép amit az oldal tartalmaz.
+## 🧪 Technológia
 
-## Kapcsolat
+- HTML, CSS, JavaScript (vanilla)
+- Cél: mobilbarát, gyors és modern webes felület
+- Jövőbeni fejlesztések: backend támogatás, profilmentés
 
-Ha bármilyen kérdésed van, küldj egy e-mailt erre a címre: **progisuli.info@gmail.com**
+
+## 🛠️ Fejlesztés alatt
+
+Ez a projekt folyamatos fejlesztés alatt áll!  
+Kérlek, nyiss egy issue-t vagy forkold le, ha szeretnél hozzájárulni!
+
+## 📬 Kapcsolat
+
+Projektgazda: [Magyar Márk](https://github.com/MagyarMark)  
+Weboldal prototípusa: [magyarmark.github.io/ProgiSuli](https://magyarmark.github.io/ProgiSuli)
+
+---
+
+> **ProgiSuli** – ahol a kódolás nem csak hasznos, hanem szórakoztató is! 🚀
