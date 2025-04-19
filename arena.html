@@ -120,6 +120,52 @@
   background-color: yellow;
 }
 
+@media (max-width: 768px) {
+  .dungeon-container {
+    flex-direction: column;
+    align-items: center;
+    padding: 1rem;
+  }
+
+  .game-grid {
+    grid-template-columns: repeat(5, 48px);
+    grid-template-rows: repeat(5, 48px);
+    gap: 10px;
+    height: auto;
+    background-size: cover;
+  }
+
+  .tile {
+    width: 48px;
+    height: 48px;
+  }
+
+  #player {
+    width: 48px;
+    height: 48px;
+  }
+
+  .challenge-box {
+    width: 100%;
+    max-width: 300px;
+    margin-top: 1rem;
+  }
+
+  .header {
+    flex-direction: column;
+    gap: 0.5rem;
+    text-align: center;
+  }
+
+  .header nav {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.5rem;
+  }
+}
+
+
   </style>
 </head>
 <body>
@@ -143,22 +189,25 @@
           </script>
     </div>
 
-    <div class="challenge-box">
-      <h2>💡 Kihívás</h2>
-      <p>Mi a C# kiíró utasítása?</p>
-      <input type="text" id="answerInput" placeholder="Írd be a választ..." />
-      <button onclick="checkAnswer()">Ellenőrzés</button>
-      <p>Pontszám: <span id="score">0</span></p>
-      <p>Jelvények: <span id="badges">0</span> <span id="badges-list"></span></p>
-    </div>
-
-    <div class="minimap">
+<div class="minimap">
       <script>
         for (let i = 0; i < 30; i++) {
           document.write(`<div class="minimap-tile${i === 0 ? ' active' : ''}"></div>`);
         }
       </script>
     </div>
+    
+    <div class="challenge-box">
+      <h2>💡 Kihívás</h2>
+      <p>Mi a C# kiíró utasítása?</p>
+      <input type="text" id="answerInput" placeholder="Írd be a választ..." />
+      <button id="checkButton" onclick="checkAnswer()">Ellenőrzés</button>
+      <p>Pontszám: <span id="score">0</span></p>
+      <p>Jelvények: <span id="badges">0</span></p>
+      <p><span id="badges-list"></span></p>
+    </div>
+
+    
   </main>
 
   <script src="script.js"></script>

@@ -93,47 +93,91 @@ let score = 0;
 let badges = 0;
 let currentTile = 0;
 
+const challenges = [
+  { question: 'Mi a C# kiíró utasítása?', answer: 'Console.WriteLine' },
+  { question: 'Mi a HTML dokumentum kezdő tage?', answer: '<!DOCTYPE html>' },
+  { question: 'Hogyan adsz meg egy színt CSS-ben hexadecimálisan (pl. fekete)?', answer: '#000000' },
+  { question: 'Mi a JavaScript változó deklarálása?', answer: 'let' },
+  { question: 'Mi a HTML címsor tagje?', answer: '<h1>' },
+  { question: 'Hogyan írsz megjegyzést HTML-ben?', answer: '<!-- -->' },
+  { question: 'Mi a CSS kulcsszó a piros színre?', answer: 'red' },
+  { question: 'Mi a Python kiíró utasítása?', answer: 'print()' },
+  { question: 'Hogyan deklarálsz változót Pythonban?', answer: 'x = 5' },
+  { question: 'Hogyan zársz le sort C#-ban?', answer: ';' },
+  { question: 'Mi az alapvető HTML struktúra kezdő tagje?', answer: '<html>' },
+  { question: 'Hogyan linkelsz be CSS fájlt HTML-ben?', answer: '<link>' },
+  { question: 'Hogyan állítasz be háttérszínt CSS-ben?', answer: 'background-color' },
+  { question: 'Hogyan adsz meg egy ID-t HTML elemnek?', answer: 'id=""' },
+  { question: 'Melyik JavaScript kulcsszó új értéket ad változónak?', answer: '=' },
+];
+
+let freeSteps = Array(30).fill(false);
+let challengeSteps = Array(30).fill(false);
+
+// Véletlenszerűen 15 mezőre helyezünk kihívásokat (kivéve 0-át és 29-et)
+let challengeIndices = [];
+while (challengeIndices.length < 15) {
+  let rand = Math.floor(Math.random() * 28) + 1; // 1 - 28 között
+  if (!challengeIndices.includes(rand)) challengeIndices.push(rand);
+}
+
+challengeIndices.forEach(index => challengeSteps[index] = true);
+freeSteps = freeSteps.map((_, idx) => !challengeSteps[idx]);
+
 function checkAnswer() {
-  const input = document.getElementById('answerInput').value.trim();
-  const correct = 'Console.WriteLine'; // Példa válasz
+  const input = document.getElementById('answerInput');
+  const button = document.getElementById('checkButton');
 
-  if (input === correct) {
-    score += 10;
-    document.getElementById('score').textContent = score;
+  if (currentTile === 29) {
+    document.querySelector('.challenge-box p').textContent = '🎉 Gratulálunk ügyesen kivitted a Dungeon Of Code játékunkat!';
+    input.style.display = 'none';
+    button.style.display = 'none';
+    return;
+  }
 
-    // új mezőre lépés (következő tile)
-    if (currentTile < 29) {
+  // Kihívásos mező
+  if (challengeSteps[currentTile]) {
+    const answer = input.value.trim();
+    const correct = challenges.shift().answer;
+
+    if (answer === correct) {
+      score += 10;
+      updateScoreAndBadges();
       moveTo(currentTile + 1);
-    }
-
-    // Jelvény osztás
-    if (score >= 30 && badges === 0) {
-      badges++;
-      document.getElementById('badges').textContent = badges;
-      document.getElementById('badges-list').textContent = '🎖️';
-    }
-    if (score >= 50 && badges === 1) {
-      badges++;
-      document.getElementById('badges').textContent = badges;
-      document.getElementById('badges-list').textContent = '🎖️ 🎖️';
-    }
-    if (score >= 70 && badges === 2) {
-      badges++;
-      document.getElementById('badges').textContent = badges;
-      document.getElementById('badges-list').textContent = '🎖️ 🎖️ 🎖️';
-    }
-    if (score >= 100 && badges === 3) {
-      badges++;
-      document.getElementById('badges').textContent = badges;
-      document.getElementById('badges-list').textContent = '🎖️ 🎖️ 🎖️ 🎖️';
-    }
-    if (score >= 150 && badges === 4) {
-      badges++;
-      document.getElementById('badges').textContent = badges;
-      document.getElementById('badges-list').textContent = '🎖️ 🎖️ 🎖️ 🎖️ 🎖️';
+      loadChallenge();
+    } else {
+      alert('Próbáld újra!');
     }
   } else {
-    alert('Próbáld újra!');
+    // Ingyenes mező
+    moveTo(currentTile + 1);
+    loadChallenge();
+  }
+}
+
+function loadChallenge() {
+  const input = document.getElementById('answerInput');
+  const button = document.getElementById('checkButton');
+  const text = document.querySelector('.challenge-box p');
+
+  if (currentTile === 29) {
+    text.textContent = '🎉 Gratulálunk ügyesen kivitted a Dungeon Of Code játékunkat!';
+    input.style.display = 'none';
+    button.style.display = 'none';
+    return;
+  }
+
+  if (challengeSteps[currentTile]) {
+    const q = challenges[0].question;
+    text.textContent = q;
+    input.value = '';
+    input.placeholder = "Írd be a választ...";
+    input.style.display = 'inline-block';
+    button.textContent = 'Ellenőrzés';
+  } else {
+    text.textContent = 'Ez most egy könnyű szoba, továbbmehetsz ingyen!';
+    input.style.display = 'none';
+    button.textContent = 'Tovább';
   }
 }
 
@@ -148,7 +192,22 @@ function moveTo(newTile) {
   allMiniTiles[newTile].classList.add('active');
 }
 
-function updateBadges() {
-    document.getElementById('badges-count').textContent = badges.length;
-    document.getElementById('badges-list').textContent = badges.join(" ");
+function updateScoreAndBadges() {
+  document.getElementById('score').textContent = score;
+
+  const badgeList = ['🎖️', '🎖️ 🎖️', '🎖️ 🎖️ 🎖️', '🎖️ 🎖️ 🎖️ 🎖️', '🎖️ 🎖️ 🎖️ 🎖️ 🎖️'];
+  const badgeThresholds = [30, 50, 70, 100, 150];
+
+  for (let i = 0; i < badgeThresholds.length; i++) {
+    if (score >= badgeThresholds[i] && badges === i) {
+      badges++;
+      document.getElementById('badges').textContent = badges;
+      document.getElementById('badges-list').textContent = badgeList[i];
+    }
   }
+}
+
+// Betöltéskor első kérdés
+window.onload = () => {
+  loadChallenge();
+};

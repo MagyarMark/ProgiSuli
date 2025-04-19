@@ -6,6 +6,189 @@
   <link rel="icon" type="image/x-icon" href="png/PS.png">
   <title>Dungeon of Code – ProgiSuli</title>
   <link rel="stylesheet" href="style.css"/>
+  <style>
+    /*Fixálások*/
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #121427;
+  color: #fff;
+}
+
+header {
+  background-color: #1e1e2f;
+  padding: 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+}
+
+header h1 {
+  font-size: 1.4rem;
+  margin: 0;
+}
+
+#menuToggle {
+  font-size: 1.5rem;
+  background: none;
+  border: none;
+  color: white;
+  cursor: pointer;
+  display: none;
+}
+
+nav#mainNav {
+  display: flex;
+  gap: 1rem;
+}
+
+nav#mainNav a {
+  color: #ccc;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+nav#mainNav a:hover {
+  color: white;
+}
+
+/* Mobilmenü */
+@media (max-width: 768px) {
+  #menuToggle {
+    display: block;
+  }
+
+  nav#mainNav {
+    flex-direction: column;
+    background-color: #1a1a2a;
+    position: absolute;
+    top: 100%;
+    right: 0;
+    width: 100%;
+    display: none;
+  }
+
+  nav#mainNav.active {
+    display: flex;
+  }
+
+  nav#mainNav a {
+    padding: 1rem;
+    border-top: 1px solid #2c2c3d;
+  }
+}
+
+/* Fő tartalom */
+main.dungeon-page {
+  padding: 2rem;
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+section {
+  margin-bottom: 2rem;
+}
+
+h2, h3 {
+  color: #3b82f6;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+ul li {
+  margin-bottom: 0.5rem;
+}
+
+/* Előnézet kép */
+.preview-img {
+  width: 100%;
+  max-width: 600px;
+  border-radius: 10px;
+  display: block;
+  margin: 1rem auto;
+}
+
+.preview-caption {
+  text-align: center;
+  color: #aaa;
+}
+
+/* Gomb */
+.btn {
+  display: inline-block;
+  padding: 0.75rem 1.5rem;
+  background-color: #3b82f6;
+  color: white;
+  border-radius: 5px;
+  text-decoration: none;
+  font-weight: bold;
+  margin-top: 1rem;
+  transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+  background-color: #2563eb;
+}
+
+.btn.disabled {
+  background-color: #555;
+  cursor: not-allowed;
+}
+
+/* Lábléc */
+footer.footer {
+  background-color: #1e1e2f;
+  padding: 2rem;
+  color: #aaa;
+}
+
+.footer-content {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.footer-left h3 {
+  margin: 0;
+  font-size: 1.2rem;
+}
+
+.footer-links {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.footer-links a {
+  color: #aaa;
+  text-decoration: none;
+}
+
+.footer-links a:hover {
+  color: white;
+}
+
+/* Extra mobil optimalizálás */
+@media (max-width: 480px) {
+  main.dungeon-page {
+    padding: 1rem;
+  }
+
+  header h1 {
+    font-size: 1.1rem;
+  }
+
+  .btn {
+    width: 100%;
+    text-align: center;
+  }
+}
+
+  </style>
 </head>
 <body>
   <header>
