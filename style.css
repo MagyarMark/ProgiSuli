@@ -567,24 +567,23 @@ nav button:hover {
     display: block;
   }
 
-  nav {
-    display: none;
+  nav#mainNav {
     flex-direction: column;
+    background-color: #1a1a2a;
+    position: absolute;
+    top: 100%;
+    right: 0;
     width: 100%;
-    background-color: #2c2c40;
-    margin-top: 1rem;
-    padding: 1rem;
-    border-radius: 8px;
+    display: none;
   }
 
-  nav.active {
+  nav#mainNav.active {
     display: flex;
   }
 
-  nav a, nav button {
-    width: 100%;
-    text-align: left;
-    padding: 0.5rem 0;
+  nav#mainNav a {
+    padding: 1rem;
+    border-top: 1px solid #2c2c3d;
   }
 }
 
