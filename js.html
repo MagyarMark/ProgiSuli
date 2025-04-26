@@ -99,6 +99,96 @@ console.log(diak.nev);
       </code></pre>
     </section>
 
+    <section class="module-section">
+      <h2>🧹 Feltételes (ternary) operátor</h2>
+      <p>Egyszerűbb feltételes logikák rövidítése:</p>
+      <pre><code class="language-javascript">
+    let kor = 18;
+    let jogosult = (kor >= 18) ? "Igen" : "Nem";
+    console.log(jogosult);
+      </code></pre>
+    </section>
+    
+    <section class="module-section">
+      <h2>🧱 Switch szerkezet</h2>
+      <p>Több elágazás kezelése tisztábban:</p>
+      <pre><code class="language-javascript">
+    let nap = 3;
+    switch (nap) {
+      case 1:
+        console.log("Hétfő");
+        break;
+      case 2:
+        console.log("Kedd");
+        break;
+      case 3:
+        console.log("Szerda");
+        break;
+      default:
+        console.log("Más nap");
+    }
+      </code></pre>
+    </section>
+    
+    <section class="module-section">
+      <h2>🌟 Arrow függvények (rövidebb szintaxis)</h2>
+      <p>Modern függvényírás egyszerűsített formában:</p>
+      <pre><code class="language-javascript">
+    const osszead = (a, b) => a + b;
+    console.log(osszead(2, 3));
+      </code></pre>
+    </section>
+    
+    <section class="module-section">
+      <h2>🛠️ Alapértelmezett paraméterek</h2>
+      <p>Függvények paramétereinek előre beállított értékei:</p>
+      <pre><code class="language-javascript">
+    function udvozlet(nev = "Vendég") {
+      console.log("Helló, " + nev + "!");
+    }
+    udvozlet(); // "Helló, Vendég!"
+    udvozlet("Anna");
+      </code></pre>
+    </section>
+    
+    <section class="module-section">
+      <h2>🧹 Destrukturálás</h2>
+      <p>Objektumok és tömbök egyszerű szétszedése változókra:</p>
+      <pre><code class="language-javascript">
+    // Objektum destrukturálás
+    let ember = { nev: "Anna", kor: 25 };
+    let { nev, kor } = ember;
+    console.log(nev, kor);
+    
+    // Tömb destrukturálás
+    let szinek = ["piros", "zöld", "kék"];
+    let [elso, masodik] = szinek;
+    console.log(elso, masodik);
+      </code></pre>
+    </section>
+    
+    <section class="module-section">
+      <h2>🧵 Aszinkron műveletek - Promise alapok</h2>
+      <p>A Promise a jövőbeli eredményeket kezeli:</p>
+      <pre><code class="language-javascript">
+    let igeret = new Promise((resolve, reject) => {
+      let sikeres = true;
+      if (sikeres) {
+        resolve("Sikerült!");
+      } else {
+        reject("Hiba történt!");
+      }
+    });
+    
+    igeret.then(valasz => {
+      console.log(valasz);
+    }).catch(hiba => {
+      console.error(hiba);
+    });
+      </code></pre>
+    </section>
+    
+
     <section class="quiz-launch">
         <button class="btn" onclick="toggleQuiz()">
           🎯 Teszteld a tudásod!

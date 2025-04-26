@@ -132,6 +132,8 @@ function checkAnswer() {
     document.querySelector('.challenge-box p').textContent = '🎉 Gratulálunk ügyesen kivitted a Dungeon Of Code játékunkat!';
     input.style.display = 'none';
     button.style.display = 'none';
+    
+    startConfetti();
     return;
   }
 
@@ -211,3 +213,28 @@ function updateScoreAndBadges() {
 window.onload = () => {
   loadChallenge();
 };
+
+function startConfetti() {
+  const container = document.getElementById('confetti-container');
+
+  for (let i = 0; i < 150; i++) {
+    const confetti = document.createElement('div');
+    confetti.classList.add('confetti');
+    confetti.style.left = Math.random() * 100 + "vw";
+    confetti.style.backgroundColor = randomColor();
+    confetti.style.animationDuration = (Math.random() * 2 + 3) + "s"; // 3-5 másodperc
+    confetti.style.width = confetti.style.height = Math.random() * 5 + 5 + "px"; // 5-10px méret
+    container.appendChild(confetti);
+
+    // Konfetti eltüntetése animáció után
+    setTimeout(() => {
+      confetti.remove();
+    }, 5000);
+  }
+}
+
+function randomColor() {
+  const colors = ['#ff0a54', '#ff477e', '#ff7096', '#ff85a1', '#fbb1bd', '#f9bec7', '#f0b6ca', '#cdb4db', '#c77dff', '#9d4edd'];
+  return colors[Math.floor(Math.random() * colors.length)];
+}
+
