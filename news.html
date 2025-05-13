@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" type="image/x-icon" href="png/PS.png">
+  <link rel="stylesheet" href="style.css">
+  <link href="https://cdn.jsdelivr.net/npm/prismjs/themes/prism-tomorrow.css" rel="stylesheet" />
+  <script src="https://cdn.jsdelivr.net/npm/prismjs/prism.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/prismjs/components/prism-python.min.js"></script>
+  <title>News - ProgiSuli</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    
+    <header>
+        <h2>📰 Hírek és Frissítések</h2>
+        <p>Itt találod a legfrissebb híreinket és frissítéseinket</p>
+        <button id="menuToggle" aria-label="Menü megnyitása">☰</button>
+        <nav id="mainNav">
+        <a href="index.html">Kezdőlap</a>
+        <a href="index.html#courses">Tananyag</a>
+        <a href="rolunk.html">Rólunk</a>
+        <a href="kapcsolat.html">Kapcsolat</a>
+        </nav>
+    </header>
+
+    <section class="news-section" id="hirek">
+    <h2>📰 Újdonságok</h2>
+        <div class="news-container">
+            <article class="news-item" data-aos="fade-up" data-aos-delay="500">
+        <h3>📱 Mobilbarát verzió!</h3>
+        <p>Mostantól mobilon is könnyedén használhatod a ProgiSuli-t!</p>
+        <small>2025. április 10.</small>
+      </article>
+
+      <article class="news-item" data-aos="fade-up" data-aos-delay="500">
+        <h3>🖥️ Új C# modul!</h3>
+        <p>Fedezd fel a C# világát! Új modulunkban megtanulhatod a Tananyagok résznél.</p>
+        <small>2025. április 1.</small>
+      </article>
+        </div>
+    </section>
+
+      
+    
+    <footer class="footer">
+    <div class="footer-content">
+      <div class="footer-left">
+        <h3>ProgiSuli</h3>
+        <p>&copy; 2025 ProgiSuli. Minden jog fenntartva.</p>
+      </div>
+      <div class="footer-links">
+        <a href="index.html">Kezdőlap</a>
+        <a href="index.html#courses">Tananyag</a>
+        <a href="kapcsolat.html">Kapcsolat</a>
+      </div>
+    </div>
+  </footer>
+
+    <button id="scrollTopBtn" title="Ugrás a tetejére">⬆️</button>
+
+  <script>
+    const scrollBtn = document.getElementById("scrollTopBtn");
+  
+    window.addEventListener("scroll", () => {
+      if (window.scrollY > 300) {
+        scrollBtn.style.display = "block";
+      } else {
+        scrollBtn.style.display = "none";
+      }
+    });
+  
+    scrollBtn.addEventListener("click", () => {
+      window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+      });
+    });
+  </script>
+
+  <script>
+    // menu
+    document.getElementById("menuToggle").addEventListener("click", function () {
+    document.getElementById("mainNav").classList.toggle("active");
+  });
+  </script>
+
+  <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-DYE909LCJR"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-DYE909LCJR');
+</script>
+</body>
+</html>

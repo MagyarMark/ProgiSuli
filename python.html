@@ -128,6 +128,116 @@ p.koszon()
       </code></pre>
     </section>
 
+    <section class="module-section">
+    <h2>Fájlkezelés</h2>
+    <p>A fájlok olvasása és írása egyszerűen megvalósítható Pythonban:</p>
+    <pre><code class="language-python">
+# Fájl írása
+with open("pelda.txt", "w") as file:
+    file.write("Ez egy példa szöveg.")
+
+# Fájl olvasása
+with open("pelda.txt", "r") as file:
+    tartalom = file.read()
+    print(tartalom)
+    </code></pre>
+  </section>
+
+  <section class="module-section">
+    <h2>Modulok és importálás</h2>
+    <p>A Python modulok lehetővé teszik a kód újrahasznosítását:</p>
+    <pre><code class="language-python">
+import math
+
+print(math.sqrt(16))  # Négyzetgyök számítása
+    </code></pre>
+  </section>
+
+  <section class="module-section">
+    <h2>Lambda függvények</h2>
+    <p>A lambda függvények rövid, névtelen függvények létrehozására használhatók:</p>
+    <pre><code class="language-python">
+osszeg = lambda a, b: a + b
+print(osszeg(5, 3))  # 8
+    </code></pre>
+  </section>
+
+  <section class="module-section">
+    <h2>Halmazok</h2>
+    <p>A halmazok egyedi elemek tárolására alkalmasak:</p>
+    <pre><code class="language-python">
+halmaz = {1, 2, 3, 4}
+halmaz.add(5)
+print(halmaz)  # {1, 2, 3, 4, 5}
+    </code></pre>
+  </section>
+
+  <section class="module-section">
+    <h2>List Comprehension</h2>
+    <p>Egyszerű és hatékony mód listák létrehozására:</p>
+    <pre><code class="language-python">
+negyzetszamok = [x**2 for x in range(10)]
+print(negyzetszamok)  # [0, 1, 4, 9, 16, 25, 36, 49, 64, 81]
+    </code></pre>
+  </section>
+
+  <section class="module-section">
+    <h2>Hibakezelés több kivétellel</h2>
+    <p>A <code>try-except</code> szerkezet többféle hibát is kezelhet:</p>
+    <pre><code class="language-python">
+try:
+    szam = int(input("Adj meg egy számot: "))
+    print(10 / szam)
+except ValueError:
+    print("Ez nem szám!")
+except ZeroDivisionError:
+    print("Nullával nem oszthatunk!")
+    </code></pre>
+  </section>
+
+  <section class="module-section">
+    <h2>Generátorok</h2>
+    <p>A generátorok memóriahatékony iterációt tesznek lehetővé:</p>
+    <pre><code class="language-python">
+def szamok():
+    for i in range(5):
+        yield i
+
+for szam in szamok():
+    print(szam)
+    </code></pre>
+  </section>
+
+  <section class="module-section">
+    <h2>Dekorátorok</h2>
+    <p>A dekorátorokkal függvények viselkedése módosítható:</p>
+    <pre><code class="language-python">
+def dekorator(fuggveny):
+    def belso():
+        print("Függvény előtt")
+        fuggveny()
+        print("Függvény után")
+    return belso
+
+@dekorator
+def koszones():
+    print("Helló!")
+
+koszones()
+    </code></pre>
+  </section>
+
+  <section class="module-section">
+    <h2>Külső könyvtárak használata</h2>
+    <p>A <code>requests</code> könyvtár például HTTP kérésekhez használható:</p>
+    <pre><code class="language-python">
+import requests
+
+response = requests.get("https://api.github.com")
+print(response.status_code)
+    </code></pre>
+  </section>
+
     <section class="quiz-launch">
       <button class="btn" onclick="toggleQuiz()">🎯 Teszteld a tudásod!</button>
     </section>
