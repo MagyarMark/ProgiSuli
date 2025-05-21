@@ -1,6 +1,7 @@
 # ProgiSuli 🎓💻
 
-**ProgiSuli** egy magyar nyelvű, interaktív tanulóplatform kezdő programozóknak. Célunk, hogy szórakoztató és játékos formában tanítsuk meg az alapvető programozási nyelveket, mint a **HTML**, **CSS** és **Python**.  
+**ProgiSuli** egy magyar nyelvű, interaktív tanulóplatform kezdő programozóknak. 
+Célunk, hogy szórakoztató és játékos formában tanítsuk meg az alapvető programozási nyelveket, mint a **HTML**, **CSS** és **Python**.  
 A felület webalapú, modern és könnyen kezelhető, így akár teljesen kezdők is bátran belevághatnak!
 
 ## 🔥 Fő funkciók
