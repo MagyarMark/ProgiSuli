@@ -10,7 +10,6 @@ A felület webalapú, modern és könnyen kezelhető, így akár teljesen kezdő
 - 📚 Fejezetekre bontott tananyag, lapozható leckék
 - 🧠 Tudáspróbák, kvízek minden modul után
 - 🏆 Jelvények és pontgyűjtő rendszer
-- 📊 Haladáskövetés és eredmény mentés
 - 🌙 Sötét, kékes témájú, letisztult dizájn
 - 🎥 Rövid animációk, vizuális példák a könnyebb megértéshez
 - 🗺️ Minimaptámogatás játékmódban
@@ -35,7 +34,7 @@ Minden szobában egy kérdés vár, és a jó válaszokkal badge-eket és pontok
 
 - HTML, CSS, JavaScript (vanilla)
 - Cél: mobilbarát, gyors és modern webes felület
-- Jövőbeni fejlesztések: backend támogatás, profilmentés
+- Jövőbeli fejlesztések: backend támogatás, profilmentés, Haladáskövetés és eredmény mentés
 
 
 ## 🛠️ Fejlesztés alatt
