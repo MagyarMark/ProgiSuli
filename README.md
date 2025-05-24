@@ -50,4 +50,13 @@ Weboldal prototípusa: [magyarmark.github.io/ProgiSuli](https://magyarmark.githu
 
 ---
 
+<h3 align="center">☕Támogass egy kávéval☕</h3>
+<div align="center">
+
+[![ko-fi](https://ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/P5P61FGQJ2)
+
+</div>
+
+---
+
 > **ProgiSuli** – ahol a kódolás nem csak hasznos, hanem szórakoztató is! 🚀
