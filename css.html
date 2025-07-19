@@ -117,6 +117,42 @@ a:hover {
     </section>
 
     <section class="module-section">
+        <h2>📍 Pozíció meghatározás</h2>
+        <p>A <code>position</code> tulajdonsággal szabályozhatjuk az elemek elhelyezkedését az oldalon.</p>
+        <pre><code class="language-css">
+    .box {
+      position: absolute;
+      top: 40px;
+      left: 40px;
+      background-color: #0af;
+      color: white;
+      padding: 1rem;
+    }
+        </code></pre>
+        <div style="position: relative; height: 120px; background: #222; margin-top: 1rem;">
+          <div class="box" style="position: absolute; top: 40px; left: 40px; background-color: #0af; color: white; padding: 1rem;">
+        Ez egy abszolút pozícionált box
+          </div>
+        </div>
+      </section>
+    
+      <section class="module-section">
+        <h3>🔢 Dinamikus margó clamp()-pel</h3>
+        <p>A <code>clamp()</code> függvénnyel rugalmasan állíthatunk be értékeket, például margót:</p>
+        <pre><code class="language-css">
+    .dynamic-margin {
+      margin-left: clamp(20px, 10vw, 100px);
+      background: #0af;
+      color: white;
+      padding: 0.5rem;
+    }
+        </code></pre>
+        <div class="dynamic-margin" style="display: inline-block; margin-left: clamp(20px, 10vw, 100px); background: #0af; color: white; padding: 0.5rem; margin-top: 1rem;">
+          Ez egy dinamikus margóval rendelkező box
+        </div>
+      </section>
+
+    <section class="module-section">
       <h2>🔲 CSS Grid alapok</h2>
       <p>A Grid lehetővé teszi táblázatszerű elrendezések létrehozását.</p>
       <pre><code class="language-css">
