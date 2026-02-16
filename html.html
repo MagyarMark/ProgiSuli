@@ -23,136 +23,834 @@
 </header>
 
   <main class="module-flex">
+    
     <section class="module-section">
-      <h2>HTML alapjai</h2>
-      <p>A HTML a webes tartalom alapja. Egy egyszerű HTML dokumentum így néz ki:</p>
-      <pre><code class="language-html">
-&lt;!DOCTYPE html&gt;
-&lt;html&gt;
-  &lt;head&gt;
-    &lt;title&gt;Cím&lt;/title&gt;
-  &lt;/head&gt;
-  &lt;body&gt;
-    &lt;h1&gt;Helló Világ!&lt;/h1&gt;
-  &lt;/body&gt;
-&lt;/html&gt;
-      </code></pre>
+      <h2>Mi az a HTML?</h2>
+      <p>A <b>HTML</b> (HyperText Markup Language) a webalapú dokumentumok strukturálásának standardja. Nem programozási nyelv, hanem egy <b>markup</b> (jelölő) nyelv, amely azt határozza meg, hogyan vannak strukturálva az adatok és tartalmak egy weboldalon.</p>
+      <p><b>A HTML története:</b> Az 1990-es évek elején Tim Berners-Lee fejlesztette ki a CERN-ben. Az HTML5 az aktuális szabvány, amelyet a W3C és az WHATWG fenntartanak.</p>
     </section>
 
     <section class="module-section">
-      <h2>HTML elemek</h2>
-      <p><b>Gyakori tagek:</b></p>
-      <ul>
-        <li><code>&lt;p&gt;</code> – bekezdés, szövegblokkokhoz használjuk.</li>
-        <li><code>&lt;a&gt;</code> – hivatkozás, egy másik oldalra vagy fájlra mutat.</li>
-        <li><code>&lt;img&gt;</code> – kép megjelenítésére szolgál.</li>
-        <li><code>&lt;div&gt;</code> – konténer elem, más elemek csoportosítására.</li>
-        <li><code>&lt;h1&gt;</code> – főcím, amit általában egyszer használunk egy oldalon.</li>
-        <li><code>&lt;ul&gt;</code> – rendezetlen lista, <code>&lt;li&gt;</code> elemekkel.</li>
-        <li><code>&lt;ol&gt;</code> – számozott lista, szintén <code>&lt;li&gt;</code> elemekkel.</li>
-        <li><code>&lt;strong&gt;</code> – fontos (félkövér) kiemelés.</li>
-        <li><code>&lt;em&gt;</code> – hangsúlyos (dőlt) kiemelés.</li>
-        <li><code>&lt;input&gt;</code> – adatbevitel (pl. szövegmező).</li>
-        <li><code>&lt;form&gt;</code> – űrlap beküldéshez.</li>
-        <li><code>&lt;button&gt;</code> – kattintható gomb.</li>
-        <li><code>&lt;table&gt;</code> – táblázat létrehozására.</li>
-      </ul>
-    </section>
-
-    <section class="module-section">
-      <h2>Struktúra és példák</h2>
-      <p>Az oldal szerkezete: html → head → body. Alább egy saját példa:</p>
+      <h3>Alapvető dokumentum szerkezete</h3>
+      <p>Minden HTML oldal hasonló alapszerkezettel kezdődik:</p>
       <pre><code class="language-html">
 &lt;!DOCTYPE html&gt;
 &lt;html lang="hu"&gt;
 &lt;head&gt;
   &lt;meta charset="UTF-8"&gt;
-  &lt;title&gt;Saját oldal&lt;/title&gt;
+  &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+  &lt;title&gt;Az oldal címe&lt;/title&gt;
 &lt;/head&gt;
 &lt;body&gt;
-  &lt;h1&gt;Üdvözöllek!&lt;/h1&gt;
-  &lt;p&gt;Ez az én első oldalam.&lt;/p&gt;
+  &lt;h1&gt;Helló, Világ!&lt;/h1&gt;
+  &lt;p&gt;Ez az első HTML oldalam!&lt;/p&gt;
 &lt;/body&gt;
 &lt;/html&gt;
       </code></pre>
+      <p><b>Mit jelent ez?</b></p>
+      <ul>
+        <li><code>&lt;!DOCTYPE html&gt;</code> – Meghatározza, hogy HTML5 dokumentumot használunk.</li>
+        <li><code>&lt;html lang="hu"&gt;</code> – A dokumentum gyökéreleme. A <code>lang</code> attribútum az oldal nyelvét adja meg.</li>
+        <li><code>&lt;head&gt;</code> – A dokumentum fejléce. Itt adjuk meg a metaadatokat, CSS-t, és az oldal címét.</li>
+        <li><code>&lt;meta charset="UTF-8"&gt;</code> – Karakter kódolás meghatározása (Unicode támogatás).</li>
+        <li><code>&lt;meta name="viewport"&gt;</code> – Mobileszközök támogatása.</li>
+        <li><code>&lt;title&gt;</code> – Az oldal címe (böngészőfülön jelenik meg).</li>
+        <li><code>&lt;body&gt;</code> – A dokumentum teste. Itt helyezzük el a megjelenítendő tartalmat.</li>
+      </ul>
     </section>
 
     <section class="module-section">
-      <h2>Gyakorló HTML űrlap</h2>
-      <p>Íme egy példa egy egyszerű HTML űrlapra, amelyet gyakran használnak felhasználói adatok bekérésére:</p>
+      <h3>Szöveg és formázás</h3>
+      <p><b>A legfontosabb szöveges elemek:</b></p>
       <pre><code class="language-html">
-&lt;form&gt;
-  &lt;label for="name"&gt;Név:&lt;/label&gt;
-  &lt;input type="text" id="name" name="name"&gt;
-  &lt;br&gt;
-  &lt;label for="email"&gt;Email:&lt;/label&gt;
-  &lt;input type="email" id="email" name="email"&gt;
-  &lt;br&gt;
+&lt;!-- Fejlécek: h1 a legnagyobb, h6 a legkisebb --&gt;
+&lt;h1&gt;Főcím&lt;/h1&gt;
+&lt;h2&gt;Alcím&lt;/h2&gt;
+&lt;h3&gt;Alacím&lt;/h3&gt;
+
+&lt;!-- Bekezdés --&gt;
+&lt;p&gt;Ez egy bekezdés szövege. A bekezdések blokk szinten jelennek meg.&lt;/p&gt;
+
+&lt;!-- Sorvétés --&gt;
+&lt;br&gt;
+
+&lt;!-- Vízszintes vonal --&gt;
+&lt;hr&gt;
+
+&lt;!-- Szövegkiemelés --&gt;
+&lt;strong&gt;Félkövér szöveg (fontos)&lt;/strong&gt;
+&lt;b&gt;Félkövér szöveg (stilisztikai)&lt;/b&gt;
+&lt;em&gt;Dőlt szöveg (hangsúlyos)&lt;/em&gt;
+&lt;i&gt;Dőlt szöveg (stilisztikai)&lt;/i&gt;
+&lt;u&gt;Aláhúzott szöveg&lt;/u&gt;
+&lt;mark&gt;Kiemelt szöveg&lt;/mark&gt;
+&lt;del&gt;Kihúzott szöveg&lt;/del&gt;
+&lt;ins&gt;Beírt szöveg&lt;/ins&gt;
+      </code></pre>
+    </section>
+
+    <section class="module-section">
+      <h3>Hivatkozások és képek</h3>
+      <p><b>Hivatkozások (linkek):</b></p>
+      <pre><code class="language-html">
+&lt;!-- Hiperlink külső oldalhoz --&gt;
+&lt;a href="https://www.example.com"&gt;Bejelentkezés&lt;/a&gt;
+
+&lt;!-- Belső hivatkozás az oldalon --&gt;
+&lt;a href="index.html"&gt;Kezdőlap&lt;/a&gt;
+
+&lt;!-- Hivatkozás egy azonosítóhoz (anchor) --&gt;
+&lt;a href="#section2"&gt;Ugrás az 2. szekciót&lt;/a&gt;
+&lt;h2 id="section2"&gt;2. szekció&lt;/h2&gt;
+
+&lt;!-- Email hivatkozás --&gt;
+&lt;a href="mailto:info@example.com"&gt;Írj nekünk!&lt;/a&gt;
+
+&lt;!-- Telefon hivatkozás --&gt;
+&lt;a href="tel:+36201234567"&gt;Hívj fel!&lt;/a&gt;
+
+&lt;!-- Új lapon nyiló link --&gt;
+&lt;a href="https://www.example.com" target="_blank"&gt;Külső oldal (új lapon)&lt;/a&gt;
+      </code></pre>
+
+      <p><b>Képek:</b></p>
+      <pre><code class="language-html">
+&lt;!-- Alap képmegjelenítés --&gt;
+&lt;img src="kepem.jpg" alt="A kép leírása"&gt;
+
+&lt;!-- Képméretezés --&gt;
+&lt;img src="kepem.jpg" alt="Leírás" width="300" height="200"&gt;
+
+&lt;!-- Kép egy hivatkozáson belül --&gt;
+&lt;a href="https://example.com"&gt;
+  &lt;img src="logo.png" alt="Logó"&gt;
+&lt;/a&gt;
+
+&lt;!-- Válaszadó kép (képsűrűség támogatás) --&gt;
+&lt;img src="kepem.jpg" 
+     srcset="kepem.jpg 1x, kepem-2x.jpg 2x" 
+     alt="Leírás"&gt;
+      </code></pre>
+    </section>
+
+    <section class="module-section">
+      <h3>Listák</h3>
+      <p><b>Rendezetlen lista (unordered list - ul):</b></p>
+      <pre><code class="language-html">
+&lt;ul&gt;
+  &lt;li&gt;Első elem&lt;/li&gt;
+  &lt;li&gt;Második elem&lt;/li&gt;
+  &lt;li&gt;Harmadik elem&lt;/li&gt;
+&lt;/ul&gt;
+      </code></pre>
+
+      <p><b>Rendezett lista (ordered list - ol):</b></p>
+      <pre><code class="language-html">
+&lt;ol&gt;
+  &lt;li&gt;Első lépés&lt;/li&gt;
+  &lt;li&gt;Második lépés&lt;/li&gt;
+  &lt;li&gt;Harmadik lépés&lt;/li&gt;
+&lt;/ol&gt;
+      </code></pre>
+
+      <p><b>Definíciós lista (definition list - dl):</b></p>
+      <pre><code class="language-html">
+&lt;dl&gt;
+  &lt;dt&gt;HTML&lt;/dt&gt;
+  &lt;dd&gt;HyperText Markup Language – web dokumentumok strukturálása&lt;/dd&gt;
+  
+  &lt;dt&gt;CSS&lt;/dt&gt;
+  &lt;dd&gt;Cascading Style Sheets – weboldalak stílusozása&lt;/dd&gt;
+&lt;/dl&gt;
+      </code></pre>
+
+      <p><b>Beágyazott lista:</b></p>
+      <pre><code class="language-html">
+&lt;ul&gt;
+  &lt;li&gt;Első téma
+    &lt;ul&gt;
+      &lt;li&gt;Alpontja&lt;/li&gt;
+      &lt;li&gt;Másik alpontja&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Második téma&lt;/li&gt;
+&lt;/ul&gt;
+      </code></pre>
+    </section>
+
+    <section class="module-section">
+      <h3>Táblázatok</h3>
+      <p><b>Alapvető táblázat szerkezete:</b></p>
+      <pre><code class="language-html">
+&lt;table border="1"&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt;Név&lt;/th&gt;
+      &lt;th&gt;Város&lt;/th&gt;
+      &lt;th&gt;Kor&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;János&lt;/td&gt;
+      &lt;td&gt;Budapest&lt;/td&gt;
+      &lt;td&gt;28&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Mária&lt;/td&gt;
+      &lt;td&gt;Debrecen&lt;/td&gt;
+      &lt;td&gt;25&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+  &lt;tfoot&gt;
+    &lt;tr&gt;
+      &lt;td colspan="2"&gt;Összesen:&lt;/td&gt;
+      &lt;td&gt;53&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tfoot&gt;
+&lt;/table&gt;
+      </code></pre>
+
+      <p><b>Táblázat attribútumok:</b></p>
+      <ul>
+        <li><code>&lt;thead&gt;</code> – Táblázat fejléce</li>
+        <li><code>&lt;tbody&gt;</code> – Táblázat teste (tartalom)</li>
+        <li><code>&lt;tfoot&gt;</code> – Táblázat lábléce</li>
+        <li><code>&lt;tr&gt;</code> – Sor (table row)</li>
+        <li><code>&lt;th&gt;</code> – Fejlécelem</li>
+        <li><code>&lt;td&gt;</code> – Adatelem</li>
+        <li><code>colspan</code> – Oszlopok egyesítése</li>
+        <li><code>rowspan</code> – Sorok egyesítése</li>
+      </ul>
+    </section>
+
+    <section class="module-section">
+      <h3>Szémantikus HTML</h3>
+      <p>A szémantikus HTML azt jelenti, hogy olyan elemeket használunk, amelyek jelentéstartalommal bírnak, nem csak formázásra valók. Ez jobb SEO-t, hozzáférhetőséget és karbantarthatóságot biztosít.</p>
+      <pre><code class="language-html">
+&lt;!-- Régi, nem szémantikus megközelítés --&gt;
+&lt;div class="header"&gt;
+  &lt;div class="nav"&gt;
+    &lt;a href="#"&gt;Otthon&lt;/a&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;!-- Modern, szémantikus megközelítés --&gt;
+&lt;header&gt;
+  &lt;nav&gt;
+    &lt;a href="#"&gt;Otthon&lt;/a&gt;
+  &lt;/nav&gt;
+&lt;/header&gt;
+      </code></pre>
+
+      <p><b>Fontos szémantikus elemek:</b></p>
+      <pre><code class="language-html">
+&lt;!-- Fejléc --&gt;
+&lt;header&gt;
+  &lt;h1&gt;Weboldal címe&lt;/h1&gt;
+  &lt;nav&gt;
+    &lt;a href="#"&gt;Menü&lt;/a&gt;
+  &lt;/nav&gt;
+&lt;/header&gt;
+
+&lt;!-- Fő tartalom --&gt;
+&lt;main&gt;
+  &lt;article&gt;
+    &lt;h2&gt;Cikk címe&lt;/h2&gt;
+    &lt;p&gt;Cikk tartalma...&lt;/p&gt;
+  &lt;/article&gt;
+
+  &lt;aside&gt;
+    &lt;h3&gt;Oldalsáv&lt;/h3&gt;
+    &lt;p&gt;Kiegészítő tartalom...&lt;/p&gt;
+  &lt;/aside&gt;
+&lt;/main&gt;
+
+&lt;!-- Lábléc --&gt;
+&lt;footer&gt;
+  &lt;p&gt;&copy; 2025 ProgiSuli. Minden jog fenntartva.&lt;/p&gt;
+&lt;/footer&gt;
+      </code></pre>
+
+      <p><b>Szémantikus elemek listája:</b></p>
+      <ul>
+        <li><code>&lt;header&gt;</code> – Az oldal vagy szakasz fejléce</li>
+        <li><code>&lt;nav&gt;</code> – Navigációs linkek</li>
+        <li><code>&lt;main&gt;</code> – Az oldal fő tartalma</li>
+        <li><code>&lt;article&gt;</code> – Önálló, újrahasznosítható tartalom (cikk, blog poszt)</li>
+        <li><code>&lt;section&gt;</code> – A dokumentum egy egyértelmű szakasza</li>
+        <li><code>&lt;aside&gt;</code> – Oldalsáv, kiegészítő tartalom</li>
+        <li><code>&lt;footer&gt;</code> – Az oldal vagy szakasz lábléce</li>
+        <li><code>&lt;time&gt;</code> – Dátum és idő megjelölése</li>
+        <li><code>&lt;figure&gt;</code> – Ábra, diagram, kép (szövegből függetlenül)</li>
+        <li><code>&lt;figcaption&gt;</code> – Az ábra felirata</li>
+      </ul>
+    </section>
+
+    <section class="module-section">
+      <h3>Űrlapok</h3>
+      <p>Az űrlapok a felhasználó-oldal kommunikáció alapja. Az alábbi kódpéldában látható az összes fontosabb input típus:</p>
+      <pre><code class="language-html">
+&lt;form action="/submit" method="POST"&gt;
+  &lt;!-- Szövegbevitel --&gt;
+  &lt;label for="username"&gt;Felhasználónév:&lt;/label&gt;
+  &lt;input type="text" id="username" name="username" required&gt;
+
+  &lt;!-- Email --&gt;
+  &lt;label for="email"&gt;Email cím:&lt;/label&gt;
+  &lt;input type="email" id="email" name="email" required&gt;
+
+  &lt;!-- Jelszó --&gt;
+  &lt;label for="password"&gt;Jelszó:&lt;/label&gt;
+  &lt;input type="password" id="password" name="password" required&gt;
+
+  &lt;!-- Szám --&gt;
+  &lt;label for="age"&gt;Kor:&lt;/label&gt;
+  &lt;input type="number" id="age" name="age" min="0" max="120"&gt;
+
+  &lt;!-- Dátum --&gt;
+  &lt;label for="birthdate"&gt;Születési dátum:&lt;/label&gt;
+  &lt;input type="date" id="birthdate" name="birthdate"&gt;
+
+  &lt;!-- Időpont --&gt;
+  &lt;label for="appointment"&gt;Időpont:&lt;/label&gt;
+  &lt;input type="datetime-local" id="appointment" name="appointment"&gt;
+
+  &lt;!-- Szín választó --&gt;
+  &lt;label for="color"&gt;Kedvenc szín:&lt;/label&gt;
+  &lt;input type="color" id="color" name="color" value="#FF0000"&gt;
+
+  &lt;!-- Tartomány csúszka --&gt;
+  &lt;label for="volume"&gt;Hangerő:&lt;/label&gt;
+  &lt;input type="range" id="volume" name="volume" min="0" max="100"&gt;
+
+  &lt;!-- Legördülő menü --&gt;
+  &lt;label for="country"&gt;Ország:&lt;/label&gt;
+  &lt;select id="country" name="country"&gt;
+    &lt;option value=""&gt;-- Választ egy országot --&lt;/option&gt;
+    &lt;option value="hu"&gt;Magyarország&lt;/option&gt;
+    &lt;option value="at"&gt;Ausztria&lt;/option&gt;
+    &lt;option value="sk"&gt;Szlovákia&lt;/option&gt;
+  &lt;/select&gt;
+
+  &lt;!-- Többválasztós lista --&gt;
+  &lt;label&gt;Érdeklődési körök:&lt;/label&gt;
+  &lt;select name="interests" multiple&gt;
+    &lt;option value="sports"&gt;Sport&lt;/option&gt;
+    &lt;option value="music"&gt;Zene&lt;/option&gt;
+    &lt;option value="reading"&gt;Olvasás&lt;/option&gt;
+  &lt;/select&gt;
+
+  &lt;!-- Szövegmező (textarea) --&gt;
+  &lt;label for="message"&gt;Üzenet:&lt;/label&gt;
+  &lt;textarea id="message" name="message" rows="4" cols="50"&gt;&lt;/textarea&gt;
+
+  &lt;!-- Jelölőnégyzet --&gt;
+  &lt;input type="checkbox" id="agree" name="agree"&gt;
+  &lt;label for="agree"&gt;Elfogadom a feltételeket&lt;/label&gt;
+
+  &lt;!-- Rádió gomb --&gt;
+  &lt;label&gt;Nem:&lt;/label&gt;
+  &lt;input type="radio" name="gender" value="male"&gt; Férfi
+  &lt;input type="radio" name="gender" value="female"&gt; Nő
+  &lt;input type="radio" name="gender" value="other"&gt; Egyéb
+
+  &lt;!-- Rejtett mező --&gt;
+  &lt;input type="hidden" name="csrfToken" value="token123"&gt;
+
+  &lt;!-- Gomb --&gt;
   &lt;button type="submit"&gt;Küldés&lt;/button&gt;
+  &lt;button type="reset"&gt;Törlés&lt;/button&gt;
 &lt;/form&gt;
       </code></pre>
 
-      <form class="demo-form" onsubmit="return false">
-        <label for="demoName">Név:</label>
-        <input type="text" id="demoName" placeholder="Írd be a neved">
-        <label for="demoEmail">Email:</label>
-        <input type="email" id="demoEmail" placeholder="pl. te@pelda.hu">
-        <button onclick="alert('Köszönjük, hogy kitöltötted!')">Küldés</button>
-      </form>
+      <p><b>Űrlap attribútumok:</b></p>
+      <ul>
+        <li><code>action</code> – Hova küldje az adatokat az űrlap</li>
+        <li><code>method</code> – GET vagy POST</li>
+        <li><code>enctype</code> – Kódolás típusa (pl. multipart/form-data fájlfeltöltéshez)</li>
+        <li><code>novalidate</code> – Elkerüli a böngésző alapértelmezett validálást</li>
+      </ul>
+
+      <p><b>Input attribútumok:</b></p>
+      <ul>
+        <li><code>required</code> – Kötelező mező</li>
+        <li><code>pattern</code> – Reguláris kifejezés validáláshoz</li>
+        <li><code>placeholder</code> – Segédszöveg</li>
+        <li><code>disabled</code> – Letiltott mező</li>
+        <li><code>readonly</code> – Csak olvasható mező</li>
+        <li><code>maxlength</code> – Maximum karakterhossz</li>
+        <li><code>minlength</code> – Minimum karakterhossz</li>
+      </ul>
     </section>
 
     <section class="module-section">
-      <h2>💻 Interaktív HTML szerkesztő</h2>
-      <p>Próbáld ki a HTML-t élőben! Írj be HTML kódot a bal oldali mezőbe, és az eredmény azonnal megjelenik jobb oldalt.</p>
+      <h3>Meta tagek és fejléc</h3>
+      <p>A meta tagek a dokumentum metaadatait tartalmazzák. Ezek a keresőmotoroknak és böngészőknek adnak információt.</p>
+      <pre><code class="language-html">
+&lt;head&gt;
+  &lt;!-- Karakter kódolás --&gt;
+  &lt;meta charset="UTF-8"&gt;
+
+  &lt;!-- Viewport (mobileszközökhöz) --&gt;
+  &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+
+  &lt;!-- Oldal leírása (keresőmotorok által használt) --&gt;
+  &lt;meta name="description" content="Az oldal rövid leírása, max 160 karakter"&gt;
+
+  &lt;!-- Kulcsszavak --&gt;
+  &lt;meta name="keywords" content="HTML, CSS, JavaScript, web fejlesztés"&gt;
+
+  &lt;!-- Szerző --&gt;
+  &lt;meta name="author" content="Szerző neve"&gt;
+
+  &lt;!-- Böngésző gyorsítótár --&gt;
+  &lt;meta http-equiv="Cache-Control" content="max-age=3600"&gt;
+
+  &lt;!-- Favicon --&gt;
+  &lt;link rel="icon" type="image/x-icon" href="favicon.ico"&gt;
+
+  &lt;!-- Stiluslapok --&gt;
+  &lt;link rel="stylesheet" href="style.css"&gt;
+
+  &lt;!-- Előzetes betöltés (DNS, kapcsolat) --&gt;
+  &lt;link rel="preconnect" href="https://cdn.example.com"&gt;
+  &lt;link rel="dns-prefetch" href="https://api.example.com"&gt;
+&lt;/head&gt;
+      </code></pre>
+    </section>
+
+    <section class="module-section">
+      <h3>Data attribútumok</h3>
+      <p>A data attribútumok egyéni adatok tárolására szolgálnak az HTML elemekben. JavaScript segítségével elérhetőek.</p>
+      <pre><code class="language-html">
+&lt;div id="user" data-user-id="12345" data-role="admin" data-status="active"&gt;
+  János András
+&lt;/div&gt;
+
+&lt;button data-action="delete" data-id="999"&gt;Törlés&lt;/button&gt;
+
+&lt;!-- JavaScript hozzáférés --&gt;
+&lt;script&gt;
+  const user = document.getElementById('user');
+  console.log(user.dataset.userId);    // "12345"
+  console.log(user.dataset.role);      // "admin"
+  console.log(user.dataset.status);    // "active"
+&lt;/script&gt;
+      </code></pre>
+    </section>
+
+    <section class="module-section">
+      <h3>Hozzáférhetőség (Accessibility)</h3>
+      <p>Az oldalak érhetőek legyenek minden felhasználó számára, köztük a fogyatékkal élőknek. Az ARIA attribútumok ezt segítik.</p>
+      <pre><code class="language-html">
+&lt;!-- ARIA role-ok --&gt;
+&lt;button aria-label="Menü megnyitása" aria-controls="mainNav"&gt;☰&lt;/button&gt;
+
+&lt;!-- ARIA live regions (dinamikus tartalom) --&gt;
+&lt;div aria-live="polite" aria-atomic="true" id="notifications"&gt;
+  &lt;p id="message"&gt;&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;!-- ARIA hidden --&gt;
+&lt;span aria-hidden="true"&gt;→&lt;/span&gt;
+
+&lt;!-- Aria-describedby --&gt;
+&lt;input type="password" aria-describedby="pwHelp"&gt;
+&lt;small id="pwHelp"&gt;Legalább 8 karakter, nagy/kisbetű, szám&lt;/small&gt;
+
+&lt;!-- Tabindex --&gt;
+&lt;a href="#content" tabindex="1"&gt;Fő tartalomra ugrás&lt;/a&gt;
+
+&lt;!-- Semantic HTML az a11y szempontjából --&gt;
+&lt;!-- Jó: --&gt;
+&lt;button onclick="toggleMenu()"&gt;Menü&lt;/button&gt;
+
+&lt;!-- Rossz: --&gt;
+&lt;div onclick="toggleMenu()" role="button"&gt;Menü&lt;/div&gt;
+      </code></pre>
+
+      <p><b>Hozzáférhetőségi szabályok:</b></p>
+      <ul>
+        <li>Mindig adjon alt szöveget a képekhez</li>
+        <li>Sem csak szín alapján adjunk információt</li>
+        <li>Legyen megfelelő kontrasztratio (WCAG 4.5:1)</li>
+        <li>Billentyűzet navigáció legyen működőképes</li>
+        <li>Szelis felhasználók számára skip linkek</li>
+        <li>Formok jól címkézett, aria-label-ek</li>
+      </ul>
+    </section>
+
+    <section class="module-section">
+      <h3>Video és audio</h3>
+      <p>Az HTML5 natív módon támogatja a multimédiás tartalmakat.</p>
+      <pre><code class="language-html">
+&lt;!-- Video --&gt;
+&lt;video width="640" height="480" controls&gt;
+  &lt;source src="video.mp4" type="video/mp4"&gt;
+  &lt;source src="video.webm" type="video/webm"&gt;
+  A böngésződ nem támogatja a video elemet.
+&lt;/video&gt;
+
+&lt;!-- Video attribútumok --&gt;
+&lt;video controls autoplay muted loop width="100%"&gt;
+  &lt;source src="video.mp4" type="video/mp4"&gt;
+&lt;/video&gt;
+
+&lt;!-- Audio --&gt;
+&lt;audio controls&gt;
+  &lt;source src="audio.mp3" type="audio/mpeg"&gt;
+  &lt;source src="audio.ogg" type="audio/ogg"&gt;
+  A böngésződ nem támogatja az audio elemet.
+&lt;/audio&gt;
+
+&lt;!-- Video sáv (track) --&gt;
+&lt;video controls&gt;
+  &lt;source src="video.mp4" type="video/mp4"&gt;
+  &lt;track src="subtitles.vtt" kind="subtitles" srclang="hu" label="Magyar"&gt;
+&lt;/video&gt;
+      </code></pre>
+    </section>
+
+    <section class="module-section">
+      <h3>Canvas és SVG</h3>
+      <p><b>Canvas:</b> Grafika rajzolása JavaScript segítségével</p>
+      <pre><code class="language-html">
+&lt;canvas id="myCanvas" width="400" height="300" style="border: 1px solid black;"&gt;
+  A böngésződ nem támogatja a canvas elemet.
+&lt;/canvas&gt;
+
+&lt;script&gt;
+  const canvas = document.getElementById('myCanvas');
+  const ctx = canvas.getContext('2d');
+  
+  // Téglalap rajzolása
+  ctx.fillStyle = 'blue';
+  ctx.fillRect(50, 50, 100, 100);
+  
+  // Kör rajzolása
+  ctx.beginPath();
+  ctx.arc(200, 150, 50, 0, 2 * Math.PI);
+  ctx.fillStyle = 'red';
+  ctx.fill();
+&lt;/script&gt;
+      </code></pre>
+
+      <p><b>SVG:</b> Skaláló vektorgrafika</p>
+      <pre><code class="language-html">
+&lt;svg width="200" height="200"&gt;
+  &lt;circle cx="100" cy="100" r="50" fill="blue" /&gt;
+  &lt;rect x="50" y="50" width="100" height="100" fill="red" opacity="0.5" /&gt;
+  &lt;line x1="0" y1="0" x2="200" y2="200" stroke="black" stroke-width="2" /&gt;
+  &lt;polygon points="100,10 40,198 190,78 10,78 160,198" fill="green" /&gt;
+&lt;/svg&gt;
+      </code></pre>
+    </section>
+
+    <section class="module-section">
+      <h3>Web Components alapjai</h3>
+      <p>A Web Components lehetővé teszik saját HTML elemek létrehozását.</p>
+      <pre><code class="language-html">
+&lt;!-- HTML Template --&gt;
+&lt;template id="userCard"&gt;
+  &lt;style&gt;
+    .card { border: 1px solid #ccc; padding: 10px; }
+  &lt;/style&gt;
+  &lt;div class="card"&gt;
+    &lt;h3&gt;&lt;slot name="name"&gt;Ismeretlen&lt;/slot&gt;&lt;/h3&gt;
+    &lt;p&gt;&lt;slot name="bio"&gt;&lt;/slot&gt;&lt;/p&gt;
+  &lt;/div&gt;
+&lt;/template&gt;
+
+&lt;!-- Custom element használata --&gt;
+&lt;user-card&gt;
+  &lt;span slot="name"&gt;János&lt;/span&gt;
+  &lt;span slot="bio"&gt;Web fejlesztő&lt;/span&gt;
+&lt;/user-card&gt;
+
+&lt;script&gt;
+  customElements.define('user-card', class extends HTMLElement {
+    connectedCallback() {
+      const template = document.getElementById('userCard');
+      this.attachShadow({mode: 'open'}).appendChild(
+        template.content.cloneNode(true)
+      );
+    }
+  });
+&lt;/script&gt;
+      </code></pre>
+    </section>
+
+    <section class="module-section">
+      <h3>Strukturált adat (Microdata és Schema.org)</h3>
+      <p>A strukturált adat segít a keresőmotoroknak megérteni az oldal tartalmát.</p>
+      <pre><code class="language-html">
+&lt;!-- Termék schema --&gt;
+&lt;article itemscope itemtype="https://schema.org/Product"&gt;
+  &lt;h1 itemprop="name"&gt;Prémium fejhallgató&lt;/h1&gt;
+  &lt;img itemprop="image" src="headphones.jpg" alt="Fejhallgató"&gt;
+  &lt;p itemprop="description"&gt;Ultra minőségű hangélmény...&lt;/p&gt;
+  
+  &lt;div itemprop="offers" itemscope itemtype="https://schema.org/Offer"&gt;
+    &lt;span itemprop="price"&gt;45000&lt;/span&gt;
+    &lt;meta itemprop="priceCurrency" content="HUF"&gt;
+  &lt;/div&gt;
+
+  &lt;div itemprop="aggregateRating" itemscope itemtype="https://schema.org/AggregateRating"&gt;
+    &lt;span itemprop="ratingValue"&gt;4.5&lt;/span&gt;/5 
+    &lt;span itemprop="reviewCount"&gt;248&lt;/span&gt; értékelés
+  &lt;/div&gt;
+&lt;/article&gt;
+
+&lt;!-- Személy schema --&gt;
+&lt;article itemscope itemtype="https://schema.org/Person"&gt;
+  &lt;h1 itemprop="name"&gt;Dr. Kiss Péter&lt;/h1&gt;
+  &lt;p itemprop="jobTitle"&gt;Web fejlesztő&lt;/p&gt;
+  &lt;p&gt;&lt;a itemprop="url" href="https://example.com"&gt;Weboldal&lt;/a&gt;&lt;/p&gt;
+&lt;/article&gt;
+      </code></pre>
+
+      <p><b>JSON-LD alternatív:</b></p>
+      <pre><code class="language-html">
+&lt;script type="application/ld+json"&gt;
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "HTML haladó technikák",
+  "image": "image.jpg",
+  "datePublished": "2025-02-16",
+  "author": {
+    "@type": "Person",
+    "name": "ProgiSuli"
+  }
+}
+&lt;/script&gt;
+      </code></pre>
+    </section>
+
+    <section class="module-section">
+      <h3>Open Graph és Twitter Card</h3>
+      <p>Szociális média megosztásához optimalizálás.</p>
+      <pre><code class="language-html">
+&lt;!-- Open Graph (Facebook, LinkedIn, stb.) --&gt;
+&lt;meta property="og:title" content="HTML Modul – ProgiSuli"&gt;
+&lt;meta property="og:description" content="Tanulj meg HTML-t a kezdéstől a profi szintig"&gt;
+&lt;meta property="og:image" content="https://example.com/og-image.png"&gt;
+&lt;meta property="og:url" content="https://example.com/html.html"&gt;
+&lt;meta property="og:type" content="article"&gt;
+
+&lt;!-- Twitter Card --&gt;
+&lt;meta name="twitter:card" content="summary_large_image"&gt;
+&lt;meta name="twitter:title" content="HTML Modul – ProgiSuli"&gt;
+&lt;meta name="twitter:description" content="Tanulj meg HTML-t a kezdéstől a profi szintig"&gt;
+&lt;meta name="twitter:image" content="https://example.com/twitter-image.png"&gt;
+&lt;meta name="twitter:creator" content="@ProgiSuli"&gt;
+      </code></pre>
+    </section>
+
+    <section class="module-section">
+      <h3>Performance optimalizáció</h3>
+      <p>HTML teljesítmény javítása.</p>
+      <pre><code class="language-html">
+&lt;!-- Defer script betöltés --&gt;
+&lt;script src="script.js" defer&gt;&lt;/script&gt;
+
+&lt;!-- Async script betöltés (párhuzamos) --&gt;
+&lt;script src="analytics.js" async&gt;&lt;/script&gt;
+
+&lt;!-- Kép lazy loading --&gt;
+&lt;img src="image.jpg" loading="lazy" alt="Leírás"&gt;
+
+&lt;!-- Responsív képek (srcset) --&gt;
+&lt;img 
+  src="small.jpg" 
+  srcset="small.jpg 480w, medium.jpg 960w, large.jpg 1440w"
+  sizes="(max-width: 600px) 480px, (max-width: 1200px) 960px, 1440px"
+  alt="Responzív kép"&gt;
+
+&lt;!-- Picture elem modern formátumokhoz --&gt;
+&lt;picture&gt;
+  &lt;source srcset="image.webp" type="image/webp"&gt;
+  &lt;source srcset="image.jpg" type="image/jpeg"&gt;
+  &lt;img src="image.jpg" alt="Kép"&gt;
+&lt;/picture&gt;
+
+&lt;!-- Preload kritikus erőforrások --&gt;
+&lt;link rel="preload" href="font.woff2" as="font" type="font/woff2" crossorigin&gt;
+&lt;link rel="preload" href="critical.css" as="style"&gt;
+
+&lt;!-- Prefetch nem kritikus erőforrások --&gt;
+&lt;link rel="prefetch" href="next-page.html"&gt;
+      </code></pre>
+    </section>
+
+    <section class="module-section">
+      <h3>Progressive Enhancement és válaszadó design</h3>
+      <p>Progressive Enhancement azt jelenti: alapvetően működik JavaScript nélkül is, majd fokozatosan javul.</p>
+      <pre><code class="language-html">
+&lt;!-- Noscript fallback --&gt;
+&lt;form action="/search" method="GET"&gt;
+  &lt;input type="text" name="q"&gt;
+  &lt;button type="submit"&gt;Keresés&lt;/button&gt;
+&lt;/form&gt;
+&lt;noscript&gt;
+  &lt;p&gt;A JavaScript letiltva van. Az oldal alapvetően működik, но някои funkciók nem érhetőek el.&lt;/p&gt;
+&lt;/noscript&gt;
+
+&lt;!-- Gépi olvasható formátum --&gt;
+&lt;meta name="format-detection" content="telephone=yes"&gt;
+&lt;meta name="apple-mobile-web-app-capable" content="yes"&gt;
+&lt;meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"&gt;
+
+&lt;!-- Responsive viewport --&gt;
+&lt;meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0"&gt;
+
+&lt;!-- Webmanifest PWA-hoz --&gt;
+&lt;link rel="manifest" href="manifest.json"&gt;
+      </code></pre>
+    </section>
+
+    <section class="module-section">
+      <h3>Biztonság HTML szinten</h3>
+      <p>HTML alapú biztonsági legjobb gyakorlatok.</p>
+      <pre><code class="language-html">
+&lt;!-- Content Security Policy --&gt;
+&lt;meta http-equiv="Content-Security-Policy" 
+      content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' fonts.googleapis.com"&gt;
+
+&lt;!-- X-UA-Compatible --&gt;
+&lt;meta http-equiv="X-UA-Compatible" content="IE=edge"&gt;
+
+&lt;!-- Referrer-Policy --&gt;
+&lt;meta name="referrer" content="strict-origin-when-cross-origin"&gt;
+
+&lt;!-- Permissions Policy (Feature Policy) --&gt;
+&lt;meta http-equiv="Permissions-Policy" content="geolocation=(), microphone=(), camera=()"&gt;
+
+&lt;!-- HTTPS csak --&gt;
+&lt;meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests"&gt;
+
+&lt;!-- Sandbox iframe --&gt;
+&lt;iframe sandbox="allow-same-origin allow-scripts" src="user-content.html"&gt;&lt;/iframe&gt;
+      </code></pre>
+    </section>
+
+    <!-- ============================================
+         INTERAKTÍV SZERKESZTŐ ÉS KVÍZ
+    ============================================ -->
+
+    <section class="module-section">
+      <h2 style="margin-top: 40px;">💻 Interaktív HTML szerkesztő</h2>
+      <p>Írj HTML kódot és azonnal látod az eredményt. Ideális a gyakorláshoz és teszteléshez:</p>
       
       <div class="editor-container">
         <textarea id="htmlInput" placeholder="Írj ide HTML kódot...">
-<h1>Üdv a ProgiSuliban!</h1>
-<p>Ez egy élő HTML szerkesztő.</p>
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+  &lt;title&gt;Teszt&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+  &lt;h1&gt;Üdv a ProgiSuliban!&lt;/h1&gt;
+  &lt;p&gt;Ez egy élő HTML szerkesztő. Módosítsd a kódot és lásd az eredményt!&lt;/p&gt;
+  &lt;ul&gt;
+    &lt;li&gt;Első elem&lt;/li&gt;
+    &lt;li&gt;Második elem&lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/body&gt;
+&lt;/html&gt;
         </textarea>
         <iframe id="htmlPreview"></iframe>
       </div>
     </section>
 
-
     <section class="quiz-launch">
+      <h2 style="margin-top: 40px;">🎓 HTML Vizsga</h2>
+      <p>Teszteld a tudásod egy teljes HTML vizsgán! 10 kérdés, összes szint abban.</p>
       <button class="btn" onclick="toggleQuiz()">
-        🎯 Teszteld a tudásod!
+        📋 Vizsga indítása
       </button>
     </section>
 
     <section id="quizSection" class="quiz" style="display:none;">
-      <h3>✅ Kvíz: Mit tanultál?</h3>
+      <h3>📋 HTML Vizsga – 10 kérdés</h3>
       <form id="quizForm">
-        <p>1. Mi jeleníti meg a főcímet?</p>
-        <label><input type="radio" name="q1" value="a"> &lt;p&gt;</label><br>
-        <label><input type="radio" name="q1" value="b"> &lt;h1&gt;</label><br>
-        <label><input type="radio" name="q1" value="c"> &lt;img&gt;</label><br>
+        
+        <div class="quiz-question">
+          <p><b>1. Mi az a HTML?</b></p>
+          <label><input type="radio" name="q1" value="a"> Programozási nyelv</label><br>
+          <label><input type="radio" name="q1" value="b"> HyperText Markup Language – weboldalak strukturálása</label><br>
+          <label><input type="radio" name="q1" value="c"> Stílusozási nyelv</label><br>
+        </div>
 
-        <p>2. Mi a dokumentum első sora?</p>
-        <label><input type="radio" name="q2" value="a"> &lt;html&gt;</label><br>
-        <label><input type="radio" name="q2" value="b"> &lt;!DOCTYPE html&gt;</label><br>
-        <label><input type="radio" name="q2" value="c"> &lt;head&gt;</label><br>
+        <div class="quiz-question">
+          <p><b>2. Melyik a helyes HTML5 dokumentum fejléc?</b></p>
+          <label><input type="radio" name="q2" value="a"> &lt;html&gt;&lt;/html&gt;</label><br>
+          <label><input type="radio" name="q2" value="b"> &lt;!DOCTYPE html&gt;</label><br>
+          <label><input type="radio" name="q2" value="c"> &lt;doctype&gt;&lt;/doctype&gt;</label><br>
+        </div>
 
-        <p>3. Melyik HTML elem használható bekezdés létrehozására?</p>
-        <label><input type="radio" name="q3" value="a"> &lt;div&gt;</label><br/>
-        <label><input type="radio" name="q3" value="b"> &lt;p&gt;</label><br/>
-        <label><input type="radio" name="q3" value="c"> &lt;span&gt;</label><br/>
+        <div class="quiz-question">
+          <p><b>3. Mi az alt attribútum?</b></p>
+          <label><input type="radio" name="q3" value="a"> Alternatív link cím</label><br>
+          <label><input type="radio" name="q3" value="b"> Képek leírása (hozzáférhetőség, SEO)</label><br>
+          <label><input type="radio" name="q3" value="c"> Alapértelmezett URL</label><br>
+        </div>
 
-        <p>4. Mi az &lt;a&gt; elem szerepe HTML-ben?</p>
-        <label><input type="radio" name="q4" value="a"> Kép megjelenítése</label><br/>
-        <label><input type="radio" name="q4" value="b"> Lista létrehozása</label><br/>
-        <label><input type="radio" name="q4" value="c"> Hivatkozás (link) létrehozása</label><br/>
+        <div class="quiz-question">
+          <p><b>4. Melyik elem szémantikus fejléc?</b></p>
+          <label><input type="radio" name="q4" value="a"> &lt;div class="header"&gt;</label><br>
+          <label><input type="radio" name="q4" value="b"> &lt;header&gt;</label><br>
+          <label><input type="radio" name="q4" value="c"> &lt;top&gt;</label><br>
+        </div>
 
-        <p>5. Melyik attribútummal tudsz egy képet alternatív szöveggel ellátni?</p>
-        <label><input type="radio" name="q5" value="a"> src</label><br/>
-        <label><input type="radio" name="q5" value="b"> alt</label><br/>
-        <label><input type="radio" name="q5" value="c"> title</label><br/>
+        <div class="quiz-question">
+          <p><b>5. Melyik attribútum tesz kötelezővé egy form mezőt?</b></p>
+          <label><input type="radio" name="q5" value="a"> mandatory</label><br>
+          <label><input type="radio" name="q5" value="b"> required</label><br>
+          <label><input type="radio" name="q5" value="c"> must-fill</label><br>
+        </div>
 
-        <button class="btn" type="submit">Ellenőrzés</button>
+        <div class="quiz-question">
+          <p><b>6. Mi a &lt;label&gt; elem célja?</b></p>
+          <label><input type="radio" name="q6" value="a"> Adat címkézés CSS-ben</label><br>
+          <label><input type="radio" name="q6" value="b"> Form számára olvasható szöveg és hozzáférhetőség</label><br>
+          <label><input type="radio" name="q6" value="c"> Csak dekoratív elem</label><br>
+        </div>
+
+        <div class="quiz-question">
+          <p><b>7. Mi az a data attribútum?</b></p>
+          <label><input type="radio" name="q7" value="a"> Adatbázis kapcsolat</label><br>
+          <label><input type="radio" name="q7" value="b"> Egyéni adat tárolása HTML elemben (JS-ből elérhető)</label><br>
+          <label><input type="radio" name="q7" value="c"> CSS stílusozás</label><br>
+        </div>
+
+        <div class="quiz-question">
+          <p><b>8. Mit jelent az ARIA?</b></p>
+          <label><input type="radio" name="q8" value="a"> Accessible Rich Internet Applications</label><br>
+          <label><input type="radio" name="q8" value="b"> Asset Request and Initial Assignment</label><br>
+          <label><input type="radio" name="q8" value="c"> Advanced Responsive Internet Architecture</label><br>
+        </div>
+
+        <div class="quiz-question">
+          <p><b>9. Mi az a Schema.org?</b></p>
+          <label><input type="radio" name="q9" value="a"> Egy CSS keretrendszer</label><br>
+          <label><input type="radio" name="q9" value="b"> Weboldalak keresőmotoroknak történő strukturálása (SEO)</label><br>
+          <label><input type="radio" name="q9" value="c"> Szerver oldali technológia</label><br>
+        </div>
+
+        <div class="quiz-question">
+          <p><b>10. Mi a Web Component?</b></p>
+          <label><input type="radio" name="q10" value="a"> Egy alkatrész egy weboldalhoz</label><br>
+          <label><input type="radio" name="q10" value="b"> Saját HTML elemek létrehozása (custom elements)</label><br>
+          <label><input type="radio" name="q10" value="c"> Egy CSS keretrendszer</label><br>
+        </div>
+
+        <button class="btn" type="submit">Vizsga beadása</button>
         <p id="quizResult"></p>
       </form>
     </section>
+
   </main>
 
   
@@ -227,21 +925,43 @@
       const q3 = document.querySelector('input[name="q3"]:checked')?.value;
       const q4 = document.querySelector('input[name="q4"]:checked')?.value;
       const q5 = document.querySelector('input[name="q5"]:checked')?.value;
+      const q6 = document.querySelector('input[name="q6"]:checked')?.value;
+      const q7 = document.querySelector('input[name="q7"]:checked')?.value;
+      const q8 = document.querySelector('input[name="q8"]:checked')?.value;
+      const q9 = document.querySelector('input[name="q9"]:checked')?.value;
+      const q10 = document.querySelector('input[name="q10"]:checked')?.value;
       const result = document.getElementById("quizResult");
   
       let correct = 0;
       if (q1 === "b") correct++;
       if (q2 === "b") correct++;
       if (q3 === "b") correct++;
-      if (q4 === "c") correct++;
+      if (q4 === "b") correct++;
       if (q5 === "b") correct++;
+      if (q6 === "b") correct++;
+      if (q7 === "b") correct++;
+      if (q8 === "a") correct++;
+      if (q9 === "b") correct++;
+      if (q10 === "b") correct++;
   
-      if (correct === 5) {
-        result.textContent = "🌟 Remek! 5/5 helyes válasz! Nagyon ügyes vagy!";
-      } else if (correct >= 3) {
-        result.textContent = `👌 ${correct}/5 válasz helyes. Jó úton jársz!`;
+      const total = 10;
+      const percentage = Math.round((correct / total) * 100);
+      
+      if (correct === 10) {
+        result.textContent = "🌟 KITŰNŐ! 10/10 helyes válasz! Master HTML szinted! 🎉";
+        result.style.color = "#27ae60";
+      } else if (correct >= 8) {
+        result.textContent = `🚀 ${correct}/10 válasz helyes (${percentage}%)! Szinte tökéletes, nagyon jó! 👏`;
+        result.style.color = "#27ae60";
+      } else if (correct >= 6) {
+        result.textContent = `👍 ${correct}/10 válasz helyes (${percentage}%). Szilárd alapod van, gyakorold még!`;
+        result.style.color = "#f39c12";
+      } else if (correct >= 4) {
+        result.textContent = `📚 ${correct}/10 válasz helyes (${percentage}%). Jó kezdet, tanulj tovább!`;
+        result.style.color = "#e67e22";
       } else {
-        result.textContent = `🙁 Csak ${correct}/5. Gyakorold még egy kicsit, menni fog!`;
+        result.textContent = `🎓 ${correct}/10 válasz helyes (${percentage}%). Kezdd el újra az alapoktól – menni fog!`;
+        result.style.color = "#e74c3c";
       }
     });
   </script>
